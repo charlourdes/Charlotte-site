@@ -112,13 +112,11 @@ body {
     font-weight: 300;
     margin-bottom: 40px;
     color: #ffffff;
-    display: flex;
-    align-items: left;
+    text-align: center; /* Center align main heading, subheading, and button */
 }
 
 .brand-name {
     font-size: 15rem;
-    margin-right: auto; /* Push to the far left */
     font-weight: 400;
     font-family: 'Thunder-Bold', sans-serif;
     color: #ffffff;
@@ -129,15 +127,15 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     color: #ffffff;
-    margin-top: 40px; /* Increase margin-top for more gap */
-    align-content: right;
+    margin-top: 20px; /* Adjust margin-top as needed */
 }
+
 
 .brand-name span {
     color: #ffffff;
 }
 
-.btn{
+.btn {
     color: #121212;
     text-decoration: none;
     cursor: pointer;
@@ -146,8 +144,8 @@ body {
     padding: 10px 30px;
     text-transform: capitalize;
     transition: .5s;
-    margin-right: 20px;
-
+    margin: 0 auto; /* Center the button */
+    display: block; /* Change display to block to center the button */
 }
 
 .header-img-container{
