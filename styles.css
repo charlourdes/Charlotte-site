@@ -46,8 +46,9 @@ body {
     margin: auto;
     width: 100%;
     position: relative;
-    background-color: rgb(255, 255, 255);
     font-family: 'Roboto', sans-serif; /* Roboto font */
+    background-color: #232824;
+    
 }
 
 /* Navbar */
@@ -69,7 +70,7 @@ body {
 .logo {
     font-size: 1.5rem;
     font-weight: 300;
-    color: white;
+    color: #ef9758;
 }
 
 /* Navigation links */
@@ -79,32 +80,35 @@ body {
 }
 
 
-.nav-links-container .links .fab {
+.nav-links-container .nav-link:hover .fab {
+    color: #ffffff !important; /* Change the color to white on hover */
+}
+
+.nav-links-container .nav-link .fab {
     font-size: 24px; /* Adjust the font size to make the icons bigger */
     vertical-align: middle; /* Align the icons vertically with the other menu links */
     margin-top: -2px; /* Adjust as needed to fine-tune the alignment */
-    color: #fff !important; /* Set the color to white or any color you prefer */
+    color: #ef9758 !important; /* Set the color to white or any color you prefer */
 }
-
-
-
 
 .links {
     text-decoration: none;
     font-weight: bold;
-    color: #ffffff;
+    color: #ef9758;
     margin: 0 5px;
     padding: 10px;
     text-transform: capitalize;
     font-size: 1rem;
-    opacity: 0.5;
+    opacity: 1;
     transition: .5s;
 }
 
 .links.active, 
 .links:hover {
     opacity: 1;
+    color: white; /* Change the color to white on hover */
 }
+
 
 
 
@@ -161,12 +165,12 @@ body {
 .btn {
     align-items: center;
     appearance: none;
-    background-color: #FCFCFD;
+    background-color: #ef9758;
     border-radius: 4px;
     border-width: 0;
-    box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+    box-shadow: rgba(59, 56, 63, 0.4) 0 2px 4px,rgba(154, 154, 154, 0.3) 0 7px 13px -3px,#78787cb9 0 -3px 0 inset;
     box-sizing: border-box;
-    color: #36395A;
+    color: #ffffff;
     cursor: pointer;
     display: inline-flex;
     font-family: "Roboto", sans-serif;
@@ -197,6 +201,9 @@ body {
   .btn:hover {
     box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
     transform: translateY(-2px);
+    background-color: #ffffff;
+    color: #43614b;
+    
   }
   
   .btn:active {
@@ -248,15 +255,16 @@ body {
 #about-section{
     position: relative;
     padding: 100px 10vw;
-    background-color: #fcfcfc;
 }
 
 .heading{
     text-align: center;
     text-transform: capitalize;
-    font-size: 3rem;
+    font-size: 50px;
     font-weight: 300;
     margin-bottom: 100px;
+    color: white;
+    font-family: 'Thunder-Bold', sans-serif;
 }
 
 .about-container{
@@ -332,52 +340,55 @@ html{
 
 /* project section */
 
-#project-section{
-    position: relative;
-    margin: 50px 0;
-    padding: 0 10vw;
+#project-section {
+    text-align: center; /* Center-align the cards */
 }
 
-
-.card {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 320px;
+.card, .card2{
+    display: inline-block; /* Display cards inline */
+    width: calc(500px); /* Set each card to occupy half of the container's width minus the gap */
+    margin-bottom: 20px; /* Add some margin between the rows */
+    margin-right: 20px; /* Add some margin between the cards */
     padding: 36px;
     border-radius: 24px;
     overflow: hidden;
     line-height: 1.6;
     border: 1px solid #999999;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .content {
+    background-color:#ffffff;
+}
+
+
+
+.content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
     color: #000000;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .content .heading {
+}
+
+.content .heading {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.3;
     z-index: 1;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .content .para {
+    color: #3c4940;
+}
+
+.content .para {
     z-index: 1;
     opacity: 0.8;
     font-size: 18px;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .card::before {
+}
+
+.card::before,
+.card2::before,
+.card::after,
+.card2::after {
     content: "";
     position: absolute;
     right: -5.2rem;
@@ -389,48 +400,40 @@ html{
     opacity: 0;
     border-radius: 50%;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .card::after {
-    content: "";
-    position: absolute;
-    left: -5.2rem;
-    bottom: -5.2rem;
-    width: 10.4rem;
-    height: 10.4rem;
-    background: #0a3cff;
-    z-index: 0;
-    opacity: 0;
-    border-radius: 50%;
-    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-  }
-  
-  .card:hover::before {
+}
+
+.card:hover::before,
+.card2:hover::before {
     scale: 7;
     opacity: 1;
-  }
-  
-  .card:hover::after {
+}
+
+.card:hover::after,
+.card2:hover::after {
     scale: 7;
     opacity: 1;
-  }
-  
-  .card:hover .content .heading {
+}
+
+.card:hover .content .heading,
+.card2:hover .content .heading {
     color: #ffffff;
-  }
-  
-  .card:hover .content .para {
+}
+
+.card:hover .content .para,
+.card2:hover .content .para {
     color: #ffffff;
-  }
-  
-  .card:hover {
+}
+
+.card:hover,
+.card2:hover {
     box-shadow: 0rem 6px 13px rgba(0, 0, 0, 0.1),
       0rem 24px 24px rgba(0, 0, 0, 0.09), 0rem 55px 33px rgba(0, 0, 0, 0.05),
       0rem 97px 39px rgba(0, 0, 0, 0.01), 0rem 152px 43px rgba(0, 0, 0, 0);
     border-color: #0a3cff;
     scale: 1.05;
-  }
-  
+}
+
+ 
 
 /* contact section */
 
