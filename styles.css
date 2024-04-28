@@ -47,7 +47,7 @@ body {
     width: 100%;
     position: relative;
     font-family: 'Roboto', sans-serif; /* Roboto font */
-    background-color: #232824;
+    background-color: #191919;
     
 }
 
@@ -255,7 +255,7 @@ body {
 #about-section{
     position: relative;
     padding: 100px 10vw;
-    background-color: #3c4940;
+    background-color:#191919;
 }
 
 .heading{
