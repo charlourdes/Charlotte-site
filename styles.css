@@ -283,8 +283,8 @@ body {
 }
 
 .about-img{
-    width: 90%;
-    height: 500px;
+    width: 370px%;
+    height: 370px;
     display: block;
     object-fit: cover;
     margin: 10px auto;
