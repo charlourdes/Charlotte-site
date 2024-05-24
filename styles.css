@@ -461,7 +461,8 @@ html{
 
 .social-icons {
     display: flex;
-    gap: 20px;
+    gap: 60px;
+    padding-left: 20px;
 }
 
 .icon {
