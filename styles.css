@@ -453,7 +453,7 @@ html{
     font-weight: 200px;
     margin-bottom: 100px;
     margin-top: 0px;
-    color: rgb(190, 190, 190);
+    color: #ef9758;
     font-family: 'Thunder-Bold', sans-serif;
     padding-left: 60px;
 }
@@ -473,7 +473,7 @@ html{
 }
 
 .icon:hover {
-    color: orange;
+    color: #ef9758;
 }
 
 /* Specific icon styles if needed */
