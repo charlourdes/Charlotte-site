@@ -466,7 +466,7 @@ html{
 
 .icon {
     color: white;
-    font-size: 2rem;
+    font-size: 5rem;
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -477,17 +477,17 @@ html{
 
 /* Specific icon styles if needed */
 .linkedin:hover {
-    color: #0077B5; /* LinkedIn blue color */
+    color: #ef9758; /* LinkedIn blue color */
 }
 
 .github:hover {
-    color: #181717; /* GitHub black color */
+    color: #ef9758; /* GitHub black color */
 }
 
 .whatsapp:hover {
-    color: #25D366; /* WhatsApp green color */
+    color: #ef9758; /* WhatsApp green color */
 }
 
 .email:hover {
-    color: #D44638; /* Email red color */
+    color: #ef9758; /* Email red color */
 }
