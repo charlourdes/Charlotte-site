@@ -321,8 +321,6 @@ html{
 
 
 
-
-
 /* project section */
 
 #project-section {
@@ -344,7 +342,7 @@ html{
 
 .card, .card2{
     display: block; /* Display cards inline */
-    width: 100%; /* Set each card to occupy half of the container's width minus the gap */
+    width: 80%; /* Set each card to occupy half of the container's width minus the gap */
     margin-bottom: 20px; /* Add some margin between the rows */
     padding: 36px;
     border-radius: 24px;
