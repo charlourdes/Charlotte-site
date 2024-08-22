@@ -344,7 +344,7 @@ html{
 
 .card, .card2{
     display: inline-block; /* Display cards inline */
-    width: calc(650px); /* Set each card to occupy half of the container's width minus the gap */
+    width: calc(800px); /* Set each card to occupy half of the container's width minus the gap */
     margin-bottom: 20px; /* Add some margin between the rows */
     margin-right: 20px; /* Add some margin between the cards */
     padding: 36px;
