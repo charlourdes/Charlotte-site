@@ -343,16 +343,16 @@ html{
 }
 
 .card, .card2{
-    display: inline-block; /* Display cards inline */
-    width: calc(800px); /* Set each card to occupy half of the container's width minus the gap */
+    display: block; /* Display cards inline */
+    width: 100%; /* Set each card to occupy half of the container's width minus the gap */
     margin-bottom: 20px; /* Add some margin between the rows */
-    margin-right: 20px; /* Add some margin between the cards */
     padding: 36px;
     border-radius: 24px;
     overflow: hidden;
     line-height: 1.6;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
     background-color:#ffffff;
+    position: relative;
 }
 
 
