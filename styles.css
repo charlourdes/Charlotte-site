@@ -75,7 +75,7 @@ body {
 
 /* Logo */
 .logo img {
-    width: 70px; /* Adjust this size as needed */
+    width: 60px; /* Adjust this size as needed */
     height: auto;
 }
 
@@ -83,8 +83,14 @@ body {
 .nav-links-container {
     display: flex;
     list-style: none;
+    padding-left: 0; /* Removes default list padding */
+    margin: 0; /* Removes default margin */
 }
 
+.nav-link {
+    display: flex;
+    align-items: center; /* Vertically aligns the links with icons */
+}
 
 .nav-links-container .nav-link:hover .fab {
     color: #ffffff !important; /* Change the color to white on hover */
