@@ -94,17 +94,20 @@ body {
     font-weight: bold;
     color: #ef9758;
     margin: 0 5px;
-    padding: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
     text-transform: capitalize;
     font-size: 24px;
     opacity: 1;
     transition: .5s;
+    border-radius: 50px;
 }
 
 .links.active, 
 .links:hover {
     opacity: 1;
     color: white; /* Change the color to white on hover */
+    background-color: #0a3cff;
 }
 
 
