@@ -27,10 +27,7 @@
 }
 
 body {
-  font-family: "Changa", system-ui;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+    font-family: 'Changa', sans-serif;
 }
 
 
