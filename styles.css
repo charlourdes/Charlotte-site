@@ -73,6 +73,10 @@ body {
     background: transparent;
 }
 
+.logo {
+    margin: 0;
+}
+
 /* Logo */
 .logo img {
     width: 60px; /* Adjust this size as needed */
