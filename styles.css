@@ -61,7 +61,7 @@ body {
 }
 
 .nav-links-container .nav-link .fab {
-    font-size: 24px; /* Adjust the font size to make the icons bigger */
+    font-size: 28px; /* Adjust the font size to make the icons bigger */
     vertical-align: middle; /* Align the icons vertically with the other menu links */
     margin-top: -2px; /* Adjust as needed to fine-tune the alignment */
     color: #0A3CFF !important; /* Set the color to white or any color you prefer */
@@ -69,13 +69,14 @@ body {
 
 .links {
     text-decoration: none;
-    font-weight: bold;
+    font-family: "Baloo Da 2", sans-serif;
+    font-weight: 800;
     color: #0A3CFF;
     margin: 0 5px;
     padding-right: 20px;
     padding-left: 20px;
     text-transform: capitalize;
-    font-size: 24px;
+    font-size: 28px;
     opacity: 1;
     transition: .5s;
     border-radius: 50px;
@@ -103,7 +104,7 @@ body {
 .header-heading {
     font-size: 30px;
     font-weight: 300;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     color: #ffffff;
     text-align: center !important; /* Center align the heading */
     margin: 0 auto; /* Center the heading horizontally */
@@ -111,19 +112,21 @@ body {
 
 .sub-heading {
     font-size: 38px;
-    font-weight: 400;
+    font-weight: 700;
     color: #132774;
     margin-top: 20px;
     text-align: left !important; /* Center align the subheading */
     margin: 0 auto; /* Center the subheading horizontally */
+    font-family: "Baloo Da 2", sans-serif;
+
 }
 
 .brand-name {
-    font-size: 300px; /* Adjust the font size to your preference */
+    font-size: 250px; /* Adjust the font size to your preference */
     font-weight: 800;
     color: #061446;
     margin-top: 50px;
-    text-align: center !important; /* Center align the brand name */
+    text-align: left; /* Center align the brand name */
     margin: 0 auto; /* Center the brand name horizontally */
 }
 
