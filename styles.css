@@ -26,10 +26,6 @@
     100% { background-position: 5% 0%; }
 }
 
-body {
-    font-family: 'Changa', sans-serif;
-}
-
 
 /* Global styles */
 * {
@@ -42,7 +38,7 @@ body {
     margin: auto;
     width: 100%;
     position: relative;
-    font-family: 'Roboto', sans-serif; /* Roboto font */
+    font-family: 'Changa', sans-serif; /* Roboto font */
     background-color: #191919;
     
 }
