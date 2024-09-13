@@ -53,7 +53,7 @@ body {
     height: 80px;
     padding: 0 10vw;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     background: transparent;
 }
@@ -96,7 +96,7 @@ body {
     margin: 0 5px;
     padding: 10px;
     text-transform: capitalize;
-    font-size: 1rem;
+    font-size: 24px;
     opacity: 1;
     transition: .5s;
 }
@@ -120,7 +120,7 @@ body {
 }
 
 .header-heading {
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 300;
     margin-bottom: 40px;
     color: #ffffff;
@@ -129,17 +129,17 @@ body {
 }
 
 .sub-heading {
-    font-size: 48px;
+    font-size: 38px;
     font-weight: 400;
     color: #ffffff;
     margin-top: 20px;
-    text-align: center !important; /* Center align the subheading */
+    text-align: left !important; /* Center align the subheading */
     margin: 0 auto; /* Center the subheading horizontally */
 }
 
 .brand-name {
-    font-size: 350px; /* Adjust the font size to your preference */
-    font-weight: 400;
+    font-size: 300px; /* Adjust the font size to your preference */
+    font-weight: 800;
     color: #ffffff;
     margin-top: 50px;
     text-align: center !important; /* Center align the brand name */
