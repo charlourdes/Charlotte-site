@@ -171,7 +171,7 @@ body {
     color: #ffffff;
     cursor: pointer;
     display: inline-flex;
-    font-family: "Roboto", sans-serif;
+    font-family: "Changa", sans-serif;
     height: 48px;
     justify-content: center;
     line-height: 1;
@@ -226,7 +226,7 @@ body {
     margin-bottom: 100px;
     margin-top: 50px;
     color: white;
-    font-family: 'Thunder-Bold', sans-serif;
+    font-family: 'Changa', sans-serif;
     padding-left: 28px;
 }
 
@@ -326,7 +326,7 @@ html{
     font-weight: 300;
     margin-bottom: 100px;
     color: white;
-    font-family: 'Thunder-Bold', sans-serif;
+    font-family: 'Changa', sans-serif;
     padding-top: 70px;
     padding-left: 60px;
 }
@@ -436,7 +436,7 @@ html{
     margin-bottom: 20px;
     margin-top: 0px;
     color: white;
-    font-family: 'Thunder-Bold', sans-serif;
+    font-family: 'Changa', sans-serif;
     padding-left: 60px;
 }
 
@@ -449,7 +449,7 @@ html{
     margin-bottom: 50px;
     margin-top: 0px;
     color: #ef9758;
-    font-family: 'Thunder-Bold', sans-serif;
+    font-family: 'Changa', sans-serif;
     padding-left: 60px;
 }
 
