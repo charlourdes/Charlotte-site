@@ -16,7 +16,7 @@ body {
     margin: auto;
     width: 100%;
     position: relative;
-    font-family: 'Changa', sans-serif; /* Roboto font */
+    font-family: 'Poppins', sans-serif; /* Roboto font */
     background-color: #191919;
     
 }
@@ -69,14 +69,14 @@ body {
 
 .links {
     text-decoration: none;
-    font-family: "Baloo Da 2", sans-serif;
-    font-weight: 800;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
     color: #0A3CFF;
     margin: 0 5px;
     padding-right: 20px;
     padding-left: 20px;
     text-transform: capitalize;
-    font-size: 28px;
+    font-size: 20px;
     opacity: 1;
     transition: .5s;
     border-radius: 50px;
@@ -117,12 +117,22 @@ body {
     margin-top: 20px;
     text-align: left !important; /* Center align the subheading */
     margin: 0 auto; /* Center the subheading horizontally */
-    font-family: "Baloo Da 2", sans-serif;
+    font-family: "Poppins", sans-serif;
 
 }
 
+.context-heading {
+    font-size: 20px;
+    font-weight: 500;
+    color: #132774;
+    margin-top: 20px;
+    text-align: left !important; /* Center align the subheading */
+    margin: 0 auto; /* Center the subheading horizontally */
+    font-family: "Poppins", sans-serif;
+}
+
 .brand-name {
-    font-size: 250px; /* Adjust the font size to your preference */
+    font-size: 200px; /* Adjust the font size to your preference */
     font-weight: 800;
     color: #061446;
     margin-top: 50px;
