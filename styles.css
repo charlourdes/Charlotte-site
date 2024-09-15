@@ -4,7 +4,6 @@
 }
 
 
-
 /* Global styles */
 * {
     margin: 0;
@@ -70,7 +69,7 @@ body {
 .links {
     text-decoration: none;
     font-family: "Poppins", sans-serif;
-    font-weight: 600;
+    font-weight: 300;
     color: #0A3CFF;
     margin: 0 5px;
     padding-right: 20px;
@@ -98,7 +97,11 @@ body {
     padding: 0 10vw;
     display: flex;
     align-items: center; /* Center align items vertically */
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
     gap: 50px;
+    justify-content: flex-start
 }
 
 .header-heading {
@@ -111,7 +114,7 @@ body {
 }
 
 .sub-heading {
-    font-size: 38px;
+    font-size: 34px;
     font-weight: 700;
     color: #132774;
     margin-top: 20px;
@@ -123,7 +126,7 @@ body {
 
 .context-heading {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 300;
     color: #132774;
     margin-top: 20px;
     text-align: left !important; /* Center align the subheading */
@@ -132,18 +135,32 @@ body {
 }
 
 .brand-name {
-    font-size: 200px; /* Adjust the font size to your preference */
+    font-size: 124px; /* Adjust the font size to your preference */
     font-weight: 800;
     color: #061446;
     margin-top: 50px;
-    text-align: left; /* Center align the brand name */
+    text-align: left; 
     margin: 0 auto; /* Center the brand name horizontally */
 }
 
+.Me-home-photo {
+    position: absolute; /* Position the image absolutely within the header */
+    bottom: 10px; /* Distance from the bottom */
+    right: 200px; /* Distance from the right */
+    width: 200px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.Me-home-photo img {
+    width: 100%; /* Ensure the image scales within its container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Optional: rounded corners */
+}
 
 .brand-name span {
     color: #ffffff;
 }
+
 
 
 .btn-container {
