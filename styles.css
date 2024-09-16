@@ -1,6 +1,21 @@
 
 .header {
-    background-image: linear-gradient(to left top, #f4f7ce, #ffefd8, #ffedec, #fcf1f7, #f4f4f4);;}
+    height: 200px; /* Adjust the height as needed */
+    background: linear-gradient(287deg, #4425dc, #e8e9d1, #edf196, #6dd6ef, #4eaf45);
+    background-size: 300% 300%;
+    animation: gradient-animation 35s ease infinite;}
+
+    @keyframes gradient-animation {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
 
 
 /* Global styles */
@@ -34,7 +49,6 @@ body {
     background: transparent;
 }
 
-
 /* Logo */
 .logo img {
     width: 60px; /* Adjust this size as needed */
@@ -52,41 +66,43 @@ body {
 .nav-link {
     display: flex;
     align-items: center; /* Vertically aligns the links with icons */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 
-.nav-links-container .nav-link:hover .fab {
-    color: #132774 !important; /* Change the color to white on hover */
+.nav-links-container .nav-link:hover {
+    transform: scale(1.2); /* Scale up the link on hover */
 }
 
 .nav-links-container .nav-link .fab {
     font-size: 28px; /* Adjust the font size to make the icons bigger */
     vertical-align: middle; /* Align the icons vertically with the other menu links */
     margin-top: -4px; /* Adjust as needed to fine-tune the alignment */
-    color: #0A3CFF !important; /* Set the color to white or any color you prefer */
-    
+    color: #132774; /* Set the color */
 }
 
 .links {
     text-decoration: none;
     font-family: "Poppins", sans-serif;
     font-weight: 300;
-    color: #0A3CFF;
+    color: #132774;
     margin: 0 5px;
     padding-right: 20px;
     padding-left: 20px;
     text-transform: capitalize;
     font-size: 20px;
     opacity: 1;
-    transition: .5s;
-    border-radius: 50px;
+    transition: all 0.3s ease; /* Smooth transition for color and size */
 }
 
 .links.active, 
 .links:hover {
     opacity: 1;
-    color: #132774; /* Change the color to white on hover */
-    
+    color: #132774;
+    font-size: 24px;
+    font-weight: 500;
+    border-bottom-style: inherit;
 }
+
 
 
 /* Header heading */

@@ -31,3 +31,31 @@ const createProjectCards = (data) => {
             </div>
     `;
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section');
+
+    const checkSectionInView = () => {
+        let currentSection = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            if (window.scrollY >= (sectionTop - 60) && window.scrollY < (sectionTop + sectionHeight - 60)) {
+                currentSection = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            const target = link.getAttribute('data-target');
+            if (target === currentSection) {
+                link.classList.add('in-view');
+            } else {
+                link.classList.remove('in-view');
+            }
+        });
+    };
+
+    window.addEventListener('scroll', checkSectionInView);
+});
