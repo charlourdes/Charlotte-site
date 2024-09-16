@@ -1,21 +1,8 @@
 
 .header {
-    height: 200px; /* Adjust the height as needed */
-    background: linear-gradient(287deg, #4425dc, #e8e9d1, #edf196, #6dd6ef, #4eaf45);
-    background-size: 300% 300%;
-    animation: gradient-animation 35s ease infinite;}
+    background-color: #DDEDFF;}
 
-    @keyframes gradient-animation {
-        0% {
-          background-position: 0% 50%;
-        }
-        50% {
-          background-position: 100% 50%;
-        }
-        100% {
-          background-position: 0% 50%;
-        }
-      }
+   
 
 
 /* Global styles */
@@ -30,7 +17,7 @@ body {
     width: 100%;
     position: relative;
     font-family: 'Poppins', sans-serif; /* Roboto font */
-    background-color: #EAF4FF;
+    background-color: #032C5A;
     
 }
 
@@ -339,23 +326,29 @@ html{
 #project-section {
     text-align: center; /* Center-align the cards */
     width: 100%;
+    
 }
 
 .heading {
     text-align: left;
     text-transform: capitalize;
-    font-size: 50px;
-    font-weight: 300;
+    font-size: 36px;
+    font-weight: 500;
     margin-bottom: 100px;
-    color: white;
-    font-family: 'Changa', sans-serif;
+    color: #132774;
+    font-family: 'Poppins', sans-serif;
     padding-top: 70px;
-    padding-left: 60px;
+    padding-left: 200px;
+    
+}
+
+.card-container{
+    padding-left: 50px;
 }
 
 .card, .card2{
     display: block; 
-    width: 80%; 
+    width: 95%; 
     margin-bottom: 20px; /* Add some margin between the rows */
     padding: 36px;
     border-radius: 24px;
