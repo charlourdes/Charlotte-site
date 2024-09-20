@@ -370,7 +370,7 @@ html{
     overflow: hidden;
     line-height: 1.6;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-    background-color:#8BB9FE;
+    background-color:#8EDBA3;
     position: relative;
     align-items: flex-start;
     text-align: left;
@@ -380,19 +380,9 @@ html{
 }
 
 
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
-    color: #061446;
-    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
-    text-align: left;
-    font-family: "Poppins", sans-serif;
-   
-}
 
-.content-heading {
+
+.card .content-heading {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -408,12 +398,96 @@ html{
    
 }
 
-.text-link{
+.card2 .content-heading {
+
+ display: flex;
+flex-direction: column;
+align-items: flex-start;
+font-weight: 700;
+font-size: 60px;
+line-height: 1.3;
+z-index: 1;
+transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+color: #061446;
+text-align: left;
+font-family: "Poppins", sans-serif;
+}
+
+.card3 .content-heading {
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+font-weight: 700;
+font-size: 60px;
+line-height: 1.3;
+z-index: 1;
+transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+color: #05390D;
+text-align: left;
+font-family: "Poppins", sans-serif;
+   }
+
+.card .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    color: #271655;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.card2 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    color: #061446;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+.card3 .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    color: #05390D;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
+
+
+
+.card .text-link{
     font-family: "Poppins", sans-serif;
     z-index: 2;
     font-size: 16px;
     font-weight: 300;
-    color:#061446
+    color:#271655
+}
+
+.card2 .text-link{
+    font-family: "Poppins", sans-serif;
+    z-index: 2;
+    font-size: 16px;
+    font-weight: 300;
+    color:#061446;
+}
+
+.card3 .text-link{
+    font-family: "Poppins", sans-serif;
+    z-index: 2;
+    font-size: 16px;
+    font-weight: 300;
+    color:#05390D
 }
 
 .text-link:hover {
@@ -422,13 +496,24 @@ html{
 
 }
 
-.card-badges {
-    color: #D6D6E7;
+.card .Card-badges{
+    color: #271655;
+    z-index: 2;
+    font-weight: 300;
+}
+
+.card2 .Card-badges{
+    color: #061446;
     z-index: 2;
     font-weight: 300;
 }
 
 
+.card3 .Card-badges{
+    color: #05390D;
+    z-index: 2;
+    font-weight: 300;
+}
 
 .content .para {
     z-index: 1;
@@ -461,7 +546,7 @@ html{
     top: -5.2rem;
     width: 15rem;
     height: 15rem;
-    background: #0a3cff;
+    background: #061446;
     z-index: -1;
     opacity: 0;
     border-radius: 50%;
@@ -476,7 +561,7 @@ html{
     top: -5.2rem;
     width: 15rem;
     height: 15rem;
-    background: #0a3cff;
+    background: #05390D;
     z-index: -1;
     opacity: 0;
     border-radius: 50%;
@@ -502,25 +587,52 @@ html{
     color: #E6B4EB;
 }
 
-.card2:hover .content .content-heading {
-    color: #EAF4FF;
-}
-
-.card3:hover .content .content-heading {
-    color: #EAF4FF;
-}
-
 .card:hover .content .para{
     color: #E6B4EB;
 }
 
+.card:hover .content .text-link{
+    color: #E6B4EB;
+}
+
+.card:hover .content .Card-badges{
+    color: #E6B4EB;
+}
+
+
+.card2:hover .content .content-heading {
+    color: #8BB9FE;
+}
+
 .card2:hover .content .para {
-    color: #EAF4FF;
+    color: #8BB9FE;
+}
+
+.card2:hover .content .text-link {
+    color: #8BB9FE;
+}
+
+.card2:hover .content .Card-badges {
+    color: #8BB9FE;
+}
+
+.card3:hover .content .content-heading {
+    color: #8EDBA3;
 }
 
 .card3:hover .content .para {
-    color: #EAF4FF;
+    color: #8EDBA3;
 }
+
+.card3:hover .content .text-link {
+    color: #8EDBA3;
+}
+
+.card3:hover .content .Card-badges {
+    color: #8EDBA3;
+}
+
+
 
 .card:hover,
 .card2:hover,
