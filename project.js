@@ -29,7 +29,7 @@ const createProjectCards = (data) => {
                     </div>
                 </div>
             </div>
-    `;
+ `;
 }
 
 
