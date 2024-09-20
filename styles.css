@@ -379,7 +379,16 @@ html{
     
 }
 
-
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+}
 
 
 .card .content-heading {
@@ -437,7 +446,12 @@ font-family: "Poppins", sans-serif;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
     text-align: left;
     font-family: "Poppins", sans-serif;
+
+}
+
+.card .para {
     font-weight: 600;
+
 }
 
 .card2 .content {
@@ -449,7 +463,7 @@ font-family: "Poppins", sans-serif;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
     text-align: left;
     font-family: "Poppins", sans-serif;
-    font-weight: 600;
+    
 }
 
 .card3 .content {
@@ -461,7 +475,7 @@ font-family: "Poppins", sans-serif;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
     text-align: left;
     font-family: "Poppins", sans-serif;
-    font-weight: 600;
+    
 }
 
 
