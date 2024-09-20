@@ -353,7 +353,7 @@ html{
     padding-left: 100px;
 }
 
-.card, .card2{
+.card {
     display: block; 
     width: 90%; 
     margin-bottom: 20px; /* Add some margin between the rows */
@@ -370,12 +370,46 @@ html{
     
 }
 
+.card2{
+    display: block; 
+    width: 90%; 
+    margin-bottom: 20px; /* Add some margin between the rows */
+    padding: 50px;
+    border-radius: 24px;
+    overflow: hidden;
+    line-height: 1.6;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    background-color:#8BB9FE;
+    position: relative;
+    align-items: flex-start;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    
+}
+
+.card3{
+    display: block; 
+    width: 90%; 
+    margin-bottom: 20px; /* Add some margin between the rows */
+    padding: 50px;
+    border-radius: 24px;
+    overflow: hidden;
+    line-height: 1.6;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+    background-color:#8BB9FE;
+    position: relative;
+    align-items: flex-start;
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    
+}
+
 
 .content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 24px;
+    gap: 12px;
     color: #061446;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
     text-align: left;
@@ -402,6 +436,9 @@ html{
 .text-link{
     font-family: "Poppins", sans-serif;
     z-index: 2;
+    font-size: 16px;
+    font-weight: 300;
+    color:#061446
 }
 
 .text-link:hover {
@@ -411,18 +448,33 @@ html{
 .Card-badges {
     color: #D6D6E7;
     z-index: 2;
+    font-weight: 300;
 }
 
 .content .para {
     z-index: 1;
     opacity: 0.8;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 300;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .card::before,
+.card::after{
+    content: "";
+    position: absolute;
+    right: -5.2rem;
+    top: -5.2rem;
+    width: 15rem;
+    height: 15rem;
+    background: #271655;
+    z-index: 0;
+    opacity: 0;
+    border-radius: 50%;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
 .card2::before,
-.card::after,
 .card2::after {
     content: "";
     position: absolute;
@@ -437,30 +489,63 @@ html{
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.card3::before,
+.card3::after {
+    content: "";
+    position: absolute;
+    right: -5.2rem;
+    top: -5.2rem;
+    width: 15rem;
+    height: 15rem;
+    background: #0a3cff;
+    z-index: 0;
+    opacity: 0;
+    border-radius: 50%;
+    transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+
 .card:hover::before,
-.card2:hover::before {
+.card2:hover::before,
+.card3:hover::before {
     scale: 7;
     opacity: 1;
 }
 
 .card:hover::after,
-.card2:hover::after {
+.card2:hover::after,
+.card3:hover::after {
     scale: 12;
     opacity: 1;
 }
 
-.card:hover .content .content-heading,
-.card2:hover .content .content-heading {
-    color: #ffffff;
+.card:hover .content .content-heading {
+    color: #E6B4EB;
 }
 
-.card:hover .content .para,
+.card2:hover .content .content-heading {
+    color: #EAF4FF;
+}
+
+.card3:hover .content .content-heading {
+    color: #EAF4FF;
+}
+
+.card:hover .content .para{
+    color: #E6B4EB;
+}
+
 .card2:hover .content .para {
-    color: #ffffff;
+    color: #EAF4FF;
+}
+
+.card3:hover .content .para {
+    color: #EAF4FF;
 }
 
 .card:hover,
-.card2:hover {
+.card2:hover,
+.card3:hover {
     scale: 1.05;
 }
 
