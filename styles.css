@@ -95,6 +95,11 @@ body {
     font-size: 20px;
     font-weight: 300;
     border-bottom-style: inherit;
+    text-decoration: underline;
+}
+
+.fab-fa-github:hover{
+    colour: #3058f6
 }
 
 
@@ -236,22 +241,17 @@ body {
     gap: 100px;
 }
 
-.image-container{
-    width: 40%;
-    position: relative;
-}
+
 
 .about-img{
-    width: 370px;
-    height: 400px;
+    width: 250px;
+    height: 250px;
     display: block;
     object-fit: cover;
     margin: 10px auto;
     border-radius: 10px;
     
 }
-
-
 .social-links{
     margin-top: 20px;
     display: flex;
@@ -271,7 +271,7 @@ body {
 }
 
 .info{
-    width: 50%;
+    width: 80%;
 }
 
 .info p{
@@ -668,11 +668,11 @@ font-family: "Poppins", sans-serif;
     text-align: left;
     text-transform: capitalize;
     font-size: 80px;
-    font-weight: 300;
+    font-weight: 700;
     margin-bottom: 20px;
     margin-top: 0px;
-    color: white;
-    font-family: 'Changa', sans-serif;
+    color: #061446;
+    font-family: 'Poppins', sans-serif;
     padding-left: 60px;
 }
 
@@ -680,12 +680,12 @@ font-family: "Poppins", sans-serif;
 .sub-headingcontact{
     text-align: left;
     text-transform: capitalize;
-    font-size: 70px;
-    font-weight: 200px;
+    font-size: 48px;
+    font-weight: 500;
     margin-bottom: 50px;
     margin-top: 0px;
-    color: #ef9758;
-    font-family: 'Changa', sans-serif;
+    color: #132774;
+    font-family: 'Poppins', sans-serif;
     padding-left: 60px;
 }
 
@@ -697,26 +697,26 @@ font-family: "Poppins", sans-serif;
 }
 
 .icon {
-    color: white;
-    font-size: 7rem;
+    color: #061446;
+    font-size: 100px;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .icon:hover {
-    color: #ef9758;
+    color: #3058f6;
 }
 
 /* Specific icon styles if needed */
 .linkedin:hover {
-    color: #ef9758; /* LinkedIn blue color */
+    color: #3058f6; /* LinkedIn blue color */
 }
 
 .github:hover {
-    color: #ef9758; /* GitHub black color */
+    color: #3058f6; /* GitHub black color */
 }
 
 
 .email:hover {
-    color: #ef9758; /* Email red color */
+    color: #3058f6; /* Email red color */
 }
