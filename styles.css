@@ -91,7 +91,7 @@ body {
 .links.active, 
 .links:hover {
     opacity: 1;
-    color: #3058f6;
+    color: #061446;
     font-size: 20px;
     font-weight: 300;
     border-bottom-style: inherit;
@@ -99,7 +99,7 @@ body {
 }
 
 .fab-fa-github:hover{
-    colour: #3058f6
+    colour: #061446
 }
 
 
@@ -673,7 +673,7 @@ font-family: "Poppins", sans-serif;
     margin-top: 0px;
     color: #061446;
     font-family: 'Poppins', sans-serif;
-    padding-left: 60px;
+    padding-left: 100px;
 }
 
 
@@ -686,14 +686,14 @@ font-family: "Poppins", sans-serif;
     margin-top: 0px;
     color: #132774;
     font-family: 'Poppins', sans-serif;
-    padding-left: 60px;
+    padding-left: 100px;
 }
 
 
 .social-icons {
     display: flex;
     gap: 60px;
-    padding-left: 60px;
+    padding-left: 100px;
 }
 
 .icon {
@@ -719,4 +719,13 @@ font-family: "Poppins", sans-serif;
 
 .email:hover {
     color: #3058f6; /* Email red color */
+}
+
+
+.footer { 
+    position: ; 
+    bottom: 0; 
+    left: 0; 
+    z-index: 10;
+    padding-left: 100px;
 }
