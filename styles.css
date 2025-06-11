@@ -11,6 +11,7 @@ background: linear-gradient(292deg, rgba(255,254,233,1) 0%, rgba(135,221,255,1) 
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
 }
 
 body {
@@ -99,7 +100,7 @@ body {
 }
 
 .fab-fa-github:hover{
-    colour: #061446
+    color: #061446
 }
 
 
@@ -723,7 +724,6 @@ font-family: "Poppins", sans-serif;
 
 
 .footer { 
-    position: ; 
     bottom: 0; 
     left: 0; 
     z-index: 10;
