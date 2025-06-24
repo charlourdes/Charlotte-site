@@ -31,9 +31,10 @@ body {
     z-index: 3;
     width: 100%;
     height: 80px;
-    padding-left: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: center;
     background: transparent;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -42,14 +43,19 @@ body {
 }
 
 .navbar.hidden {
-    transform: translate(-100);
+    transform: translateY(-100%);
     opacity: 0;
 }
 
-/* Logo */
-.logo img {
-    width: 60px; /* Adjust this size as needed */
-    height: 30px;
+
+.logo-topleft img {
+    position: fixed; /* adjust as needed */
+    top: 10px;
+    left: 10px;
+    height: 20px;
+    z-index: 1000;
+    display: block;
+    
 }
 
 /* Navigation links */
@@ -69,7 +75,7 @@ body {
 
 
 .nav-links-container .nav-link .fab {
-    font-size: 28px; /* Adjust the font size to make the icons bigger */
+    font-size: 16px; /* Adjust the font size to make the icons bigger */
     vertical-align: middle; /* Align the icons vertically with the other menu links */
     margin-top: -4px; /* Adjust as needed to fine-tune the alignment */
     color: #741332; /* Set the color */
@@ -84,7 +90,7 @@ body {
     padding-right: 20px;
     padding-left: 20px;
     text-transform: capitalize;
-    font-size: 20px;
+    font-size: 16px;
     opacity: 1;
     transition: all 0.3s ease; /* Smooth transition for color and size */
 }
@@ -116,14 +122,13 @@ body {
     position: relative;
     overflow: hidden;
     gap: 50px;
-    justify-content: flex-start;
     padding-left: 100px;
     
 }
 
 .header-heading {
-    font-size: 30px;
-    font-weight: 300;
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 20px;
     color: #ffffff;
     text-align: left; /* Center align the heading */
@@ -131,7 +136,7 @@ body {
 }
 
 .sub-heading {
-    font-size: 34px;
+    font-size: 60px;
     font-weight: 600;
     color: #ffffff;
     margin-top: 20px;
@@ -140,18 +145,10 @@ body {
 
 }
 
-.context-heading {
-    font-size: 20px;
-    font-weight: 300;
-    color: #ffffff;
-    margin-top: 20px;
-    text-align: left !important; /* Center align the subheading */
-    font-family: "Poppins", sans-serif;
-}
 
 .brand-name {
-    font-size: 100px; /* Adjust the font size to your preference */
-    font-weight: 700;
+    font-size: 20px; /* Adjust the font size to your preference */
+    font-weight: 300;
     color: #ffffff;
     margin-top: 50px;
     text-align: left; 
