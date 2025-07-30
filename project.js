@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // JavaScript to toggle the navbar visibility based on scroll direction
 let lastScrollTop = 0;
 const navbar = document.querySelector('.navbar');
+const logo = document.querySelector('.logo-topleft');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -71,9 +72,11 @@ window.addEventListener('scroll', () => {
     if (currentScroll > lastScrollTop) {
         // Scrolling down
         navbar.classList.add('hidden');
+        logo.classList.add('hidden');
     } else {
         // Scrolling up
         navbar.classList.remove('hidden');
+        logo.classList.remove('hidden');
     }
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling

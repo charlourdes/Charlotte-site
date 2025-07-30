@@ -19,7 +19,7 @@ body {
     width: 100%;
     position: relative;
     font-family: 'Poppins', sans-serif; /* Roboto font */
-    background-color: #ffffff;
+    background-color: #0d1715;
     
 }
 
@@ -42,17 +42,20 @@ body {
     opacity: 1;
 }
 
-.navbar.hidden {
+.navbar.hidden, .logo-topleft.hidden {
+
     transform: translateY(-100%);
     opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
 }
 
 
 .logo-topleft img {
     position: fixed; /* adjust as needed */
-    top: 10px;
-    left: 10px;
-    height: 20px;
+    top: 30px;
+    left: 20px;
+    height: 18px;
     z-index: 1000;
     display: block;
     
@@ -98,7 +101,7 @@ body {
 .links.active, 
 .links:hover {
     opacity: 1;
-    color: #061446;
+    color: #fa82ea;
     font-size: 20px;
     font-weight: 300;
     border-bottom-style: inherit;
