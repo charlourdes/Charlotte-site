@@ -127,6 +127,9 @@ body {
 }
 
 .header-heading {
+    position: absolute;
+    top: 40px;
+    left: 100px;
     font-size: 20px;
     font-weight: 600;
     margin-bottom: 20px;
@@ -136,12 +139,17 @@ body {
 }
 
 .sub-heading {
-    font-size: 60px;
+    position: absolute;
+    bottom: 40px;
+    right: 100px;
+    font-size: 120px;
     font-weight: 600;
+    line-height: 120%;
     color: #ffffff;
     margin-top: 20px;
     text-align: left; /* Center align the subheading */
     font-family: "Clash Display", sans-serif;
+    margin-top: 0;
 
 }
 
