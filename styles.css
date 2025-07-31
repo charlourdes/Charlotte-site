@@ -1,11 +1,8 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
 
 .header {
-    background: #5264BC;
-background: linear-gradient(90deg, rgba(30, 53, 48, 1) 0%, rgba(30, 53, 48, 1) 42%, rgba(30, 53, 48, 1) 100%);}
-
-   
-
-
+    background: #5264BC;}
+  
 /* Global styles */
 * {
     margin: 0;
@@ -18,7 +15,7 @@ body {
     margin: auto;
     width: 100%;
     position: relative;
-    font-family: 'Poppins', sans-serif; /* Roboto font */
+    font-family: 'Clash Display', sans-serif; 
     background-color: #0d1715;
     
 }
@@ -86,7 +83,7 @@ body {
 
 .links {
     text-decoration: none;
-    font-family: "Poppins", sans-serif;
+    font-family: "Clash Display", sans-serif;
     font-weight: 300;
     color: #ffffff;
     margin: 0 5px;
@@ -144,7 +141,7 @@ body {
     color: #ffffff;
     margin-top: 20px;
     text-align: left; /* Center align the subheading */
-    font-family: "Poppins", sans-serif;
+    font-family: "Clash Display", sans-serif;
 
 }
 
@@ -192,7 +189,7 @@ body {
     color: #ffffff;
     cursor: inherit;
     display: inline-flex;
-    font-family: "Poppins", sans-serif;
+    font-family: "Clash Display", sans-serif;
     height: 48px;
     justify-content: center;
     line-height: 1;
@@ -230,7 +227,7 @@ body {
     font-weight: 500;
     margin-bottom: 100px;
     color: #132774;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Clash Display', sans-serif;
     padding-top: 70px;
     padding-left: 100px;
 }
