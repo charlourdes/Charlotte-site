@@ -55,6 +55,7 @@ body {
     height: 18px;
     z-index: 1000;
     display: block;
+    cursor: pointer; /* Change cursor to pointer for better UX */
     
 }
 
@@ -99,7 +100,7 @@ body {
 .links.active, 
 .links:hover {
     opacity: 1;
-    color: #923886;
+    color: #B86FB1; /* Change color on hover */
     background: #ffffff;
    /* font-size: 20px; */ 
     font-weight: 300;
