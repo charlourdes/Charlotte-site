@@ -174,34 +174,33 @@ body {
     
 }
 
+.heading-stack {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Stack and align to the right */
+    z-index: 1000;
+}
+
 .sub-heading-made-by {
-    position: absolute;
-    bottom: 184px;
-    right: 40px; /* Same distance as .sub-heading-2's left */
-    font-size: 100px;
+    font-size: 7vw;
     font-weight: 600;
-    line-height: 120%;
     color: #ffffff;
-    margin-top: 20px;
-    text-align: right; /* Center align the subheading */
+    text-align: right;
+    margin: 0 0 8px 0; /* Space below Made by */
     font-family: "Clash Display", sans-serif;
-    letter-spacing: -0.5px; /* Adjust letter spacing for better readability */
+    letter-spacing: -0.5px;
 }
 
 .sub-heading-charlotte {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 140px;
+    font-size: 10vw;
     font-weight: 600;
-    line-height: 120%;
     color: #ffffff;
-    margin-top: 0px;
-    text-align: center; /* Center align the subheading */
+    text-align: right;
+    margin: 0; /* No extra margin */
     font-family: "Clash Display", sans-serif;
-    margin-top: 0;
-    margin-right: 20px;
 }
 
 .sub-heading-curious {
@@ -210,7 +209,7 @@ body {
     right: 0px;
     width: 40%;
     padding-right: 40px;
-    font-size: 16px;
+    font-size: 2vw;
     font-weight: 300;
     line-height: 120%;
     color: #ffffff;
@@ -881,62 +880,3 @@ font-family: "Poppins", sans-serif;
 
 
 
-@media (max-width: 1200px) {
-    .sub-heading-made-by {
-        font-size: 70px;
-    }
-    .sub-heading-charlotte {
-        font-size: 100px;
-    }
-    .sub-heading-curious {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 1100px) {
-    .sub-heading-made-by {
-        font-size: 64px;
-    }
-    .sub-heading-charlotte {
-        font-size: 90px;
-    }
-    .sub-heading-curious {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 1050px) {
-    .sub-heading-made-by {
-        font-size: 60px;
-    }
-    .sub-heading-charlotte {
-        font-size: 80px;
-    }
-    .sub-heading-curious {
-        font-size: 20px;
-    }
-}
-
-@media (max-width: 900px) {
-    .sub-heading-made-by {
-        font-size: 40px;
-    }
-    .sub-heading-charlotte {
-        font-size: 60px;
-    }
-    .sub-heading-curious {
-        font-size: 18px;
-    }
-}
-
-@media (max-width: 600px) {
-    .sub-heading-made-by {
-        font-size: 24px;
-    }
-    .sub-heading-charlotte {
-        font-size: 36px;
-    }
-    .sub-heading-curious {
-        font-size: 14px;
-    }
-}
