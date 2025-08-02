@@ -81,3 +81,8 @@ window.addEventListener('scroll', () => {
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
 });
+
+
+document.getElementById('hamburger-btn').onclick = function() {
+    document.querySelector('.navbar').classList.toggle('open');
+};
