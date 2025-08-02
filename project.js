@@ -72,11 +72,9 @@ window.addEventListener('scroll', () => {
     if (currentScroll > lastScrollTop) {
         // Scrolling down
         navbar.classList.add('hidden');
-        logo.classList.add('hidden');
     } else {
         // Scrolling up
         navbar.classList.remove('hidden');
-        logo.classList.remove('hidden');
     }
 
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
@@ -86,3 +84,20 @@ window.addEventListener('scroll', () => {
 document.getElementById('hamburger-btn').onclick = function() {
     document.querySelector('.navbar').classList.toggle('open');
 };
+
+document.addEventListener('click', function(event) {
+    const navbar = document.querySelector('.navbar');
+    const hamburger = document.getElementById('hamburger-btn');
+    // If menu is open and click is outside navbar and hamburger
+    if (navbar.classList.contains('open') &&
+        !navbar.contains(event.target) &&
+        !hamburger.contains(event.target)) {
+        navbar.classList.remove('open');
+    }
+});
+
+document.querySelectorAll('.links').forEach(function(link) {
+    link.addEventListener('click', function() {
+        document.querySelector('.navbar').classList.remove('open');
+    });
+});

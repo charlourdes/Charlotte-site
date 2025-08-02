@@ -1,5 +1,9 @@
 @import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap');
 
+html, body {
+    overflow-x: hidden;
+}
+
 .header {
     background: #5264BC;}
   
@@ -25,7 +29,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3;
+    z-index: 3000;
     width: 100%;
     height: 80px;
     padding-left: 40px;
@@ -53,7 +57,7 @@ body {
     top: 30px;
     left: 20px;
     height: 18px;
-    z-index: 1000;
+    z-index: 8000;
     display: block;
     cursor: pointer; /* Change cursor to pointer for better UX */
     
@@ -116,12 +120,12 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     background: transparent;
     border: none;
     cursor: pointer;
-    z-index: 1001;
+    z-index: 3001;
     position: fixed;
     top: 20px;
     right: 20px;
@@ -137,24 +141,6 @@ body {
     transition: 0.3s;
 }
 
-@media (max-width: 900px) {
-    .hamburger {
-        display: flex;
-    }
-    .navbar {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        background: #5264BC;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 1000;
-    }
-    .navbar.open {
-        display: flex;
-    }
-}
 
 
 
@@ -188,7 +174,7 @@ body {
     
 }
 
-.sub-heading {
+.sub-heading-made-by {
     position: absolute;
     bottom: 184px;
     right: 40px; /* Same distance as .sub-heading-2's left */
@@ -202,7 +188,7 @@ body {
     letter-spacing: -0.5px; /* Adjust letter spacing for better readability */
 }
 
-.sub-heading-2 {
+.sub-heading-charlotte {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -218,7 +204,7 @@ body {
     margin-right: 20px;
 }
 
-.Second-Sub-heading {
+.sub-heading-curious {
    position: absolute;
     bottom: 400px;
     right: 0px;
@@ -484,7 +470,7 @@ html{
     font-weight: 700;
     font-size: 60px;
     line-height: 1.3;
-    z-index: 1;
+    z-index: 100;
     transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
     color: #061446;
     text-align: left;
@@ -501,7 +487,7 @@ align-items: flex-start;
 font-weight: 700;
 font-size: 60px;
 line-height: 1.3;
-z-index: 1;
+z-index: 100;
 transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 color: #061446;
 text-align: left;
@@ -516,7 +502,7 @@ align-items: flex-start;
 font-weight: 700;
 font-size: 60px;
 line-height: 1.3;
-z-index: 1;
+z-index: 100;
 transition: all 0.48s cubic-bezier(0.23, 1, 0.32, 1);
 color: #05390D;
 text-align: left;
@@ -817,22 +803,35 @@ font-family: "Poppins", sans-serif;
 
 
 @media (max-width: 900px) {
-    .sub-heading-2 {
-        font-size: 60px;
-    }
-    .sub-heading {
-        font-size: 40px;
-    }
+    
     .header-heading {
         font-size: 16px;
     }
 
     .navbar {
-        height: auto;
-        padding-left: 10px;
+        height: 600px;
+        padding-left: 40px;
         padding-right: 10px;
+        padding-top: 40px;
+        padding-bottom: 60px;
         flex-direction: column;
         align-items: flex-start;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: #212020;
+        z-index: 2000;
+        /* Animation styles */
+        transform: translateY(-100%);
+        opacity: 0;
+        transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s;
+        display: flex;
+    }
+    .navbar.open {
+        transform: translateY(0);
+        opacity: 1;
+        display: flex;
     }
 
     .nav-links-container {
@@ -840,18 +839,104 @@ font-family: "Poppins", sans-serif;
         width: 100%;
         padding: 0;
         gap: 8px;
+        align-items: flex-start;
     }
 
     .nav-link {
-        width: 100%;
+        width: auto;
         justify-content: flex-start;
+        display: flex;
     }
 
     .links {
-        width: 100%;
-        padding: 12px 10px;
-        font-size: 18px;
+        width: auto;
+        min-width: 120px;
+        padding: 12px 24px;
+        font-size: 16px;
         border-radius: 999px;
-        text-align: left;
+        text-align: center;
+        margin: 8px 0;
+        display: inline-block;
+        z-index: 3000;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+    
+    @media (max-width: 900px) {
+    .header,
+    .header-heading,
+    .aboutheading,
+    .contactheading,
+    .sub-headingcontact,
+    .card-container,
+    .footer {
+        padding-left: 16px !important;
+        padding-right: 16px !important;
+    }
+}
+}
+
+
+
+
+@media (max-width: 1200px) {
+    .sub-heading-made-by {
+        font-size: 70px;
+    }
+    .sub-heading-charlotte {
+        font-size: 100px;
+    }
+    .sub-heading-curious {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .sub-heading-made-by {
+        font-size: 64px;
+    }
+    .sub-heading-charlotte {
+        font-size: 90px;
+    }
+    .sub-heading-curious {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 1050px) {
+    .sub-heading-made-by {
+        font-size: 60px;
+    }
+    .sub-heading-charlotte {
+        font-size: 80px;
+    }
+    .sub-heading-curious {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 900px) {
+    .sub-heading-made-by {
+        font-size: 40px;
+    }
+    .sub-heading-charlotte {
+        font-size: 60px;
+    }
+    .sub-heading-curious {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sub-heading-made-by {
+        font-size: 24px;
+    }
+    .sub-heading-charlotte {
+        font-size: 36px;
+    }
+    .sub-heading-curious {
+        font-size: 14px;
     }
 }
