@@ -18,7 +18,7 @@ body {
     width: 100%;
     position: relative;
     font-family: 'Clash Display', sans-serif; 
-    background-color: #0d1715;
+    
     
 }
 
@@ -66,7 +66,7 @@ body {
 }
 
 .logo-topleft:hover {
-    color: #B86FB1;           /* Change color on hover */
+    color: #FFCBFA           /* Change color on hover */
 }
 
 /* Navigation links */
@@ -101,10 +101,11 @@ body {
     padding: 8px 20px; /* Adjust padding for better spacing */
     text-transform: capitalize;
     font-size: 16px;
-    border: 1px solid#ffffff; /* Transparent border for hover effect */
     border-radius: 24px; /* Rounded corners */
     background: transparent; /* Transparent background */
     transition: all 0.3s ease; /* Smooth transition for color and size */
+    text-decoration: underline ;
+    text-underline-offset: 4px;
 }
 
 .links.active, 
@@ -155,13 +156,13 @@ body {
 .header {
     width: 100%;
     height: 100vh;
-    position: relative;          
+    position: sticky;          
     background: #5264BC;
 }
 
 .header-heading {
     position: absolute;
-    top: 40px;
+    top: 120px;
     left: 0px;
     width: 40%;
     padding-left: 40px;
@@ -169,36 +170,84 @@ body {
     font-weight: 300;
     margin-top: 80px;
     color: #ffffff;
-    text-align: left; /* Center align the heading */
-    
+    text-align: left;
+    /* Animation properties */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 2s forwards;  /* Starts after 2 seconds */
 }
 
 .sub-heading-charlotte {
     position: absolute;
-    bottom: 00px;         /* Add this */
+    bottom: 0px;
     right: 40px;
-    font-size: 20vw;
+    font-size: 25vw;
     font-weight: 800;
     color: #ffffff;
     text-align: right;     
     font-family: "Clash Display", sans-serif;
     z-index: 1000;
     line-height: 0.7;
+    /* Animation properties */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1.2s ease-out 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .sub-heading-curious {
-   position: absolute;
+    position: absolute;
+    top: 200px;
     bottom: 400px;
     right: 0px;
-    width: 40%;
+    width: 50%;
     padding-right: 40px;
     font-size: 2vw;
     font-weight: 300;
-    line-height: 120%;
     color: #ffffff;
-    text-align: right; /* Center align the subheading */
+    text-align: right;
     font-family: "Clash Display", sans-serif;
     margin-top: 0;
+    /* Animation properties */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 2.5s forwards;  /* Starts after 2.5 seconds */
+}
+
+.rotating-text {
+    position: relative;
+    height: 3.5em; /* Adjust based on your line height */
+    overflow: hidden;
+    margin-top: 10px;
+    font-size: 5vw;
+}
+
+.text-item {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    font-weight: 600;
+    color: #ffffff;
+    pointer-events: none;
+    transform: translateY(0);  /* Remove the animation transform */
+    /* Remove the animation completely */
+}
+
+.text-item.active {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 
@@ -269,107 +318,27 @@ body {
   
   
 
-/* about section */
-
-#about-section{
-    position: relative;
-    padding: 35px ;
-}
-
-.aboutheading{
-    text-align: left;
-    text-transform: capitalize;
-    font-size: 36px;
-    font-weight: 500;
-    margin-bottom: 100px;
-    color: #132774;
-    font-family: 'Clash Display', sans-serif;
-    padding-top: 70px;
-    padding-left: 100px;
-}
-
-.about-container{
-    width: 100%;
-    margin: 50px 0 100px;
-    display: flex;
-    gap: 100px;
-}
 
 
 
-.about-img{
-    width: 250px;
-    height: 250px;
-    display: block;
-    object-fit: cover;
-    margin: 10px auto;
-    border-radius: 10px;
-    
-}
-.social-links{
-    margin-top: 20px;
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
-
-.social-img{
-    width: 30px;
-    height: 30px;
-    opacity: .4;
-    transition: .5s;
-}
-
-.social-img:hover{
-    opacity: 1;
-}
-
-.info{
-    width: 80%;
-}
-
-.info p{
-    font-size: 1.2rem;
-    line-height: 2rem;
-    margin: 30px 0;
-    color: #132774;
-}
-
-html{
-    scroll-behavior: smooth;
-}
-
-::selection{
-    background: #9f526430;
-}
-
-
-.infobuttons {
-    margin-top: 20px; /* Add margin to the top of the button container */
-}
-
-.infobuttons .btn {
-    margin-right: 10px; /* Add margin to the right of each button */
-}
-
-
-
-/* project section */
+/* PRODUCT DESIGN UX UI SECTION*/
 
 #project-section {
     text-align: center; /* Center-align the cards */
     width: 100%;
-    
+    z-index: 2000;
+    opacity: 0.8;
+    background-color: #ffffff;
 }
 
 .heading {
     text-align: left;
     text-transform: capitalize;
-    font-size: 36px;
-    font-weight: 500;
+    font-size: 4vW;
+    font-weight: 600;
     margin-bottom: 100px;
-    color: #132774;
-    font-family: 'Poppins', sans-serif;
+    color: #474747;
+   font-family: 'Clash Display', sans-serif; 
     padding-top: 70px;
     padding-left: 100px;
     
@@ -708,7 +677,88 @@ font-family: "Poppins", sans-serif;
     scale: 1.05;
 }
 
- 
+ /* about section */
+
+#about-section{
+    position: relative;
+    padding: 35px ;
+}
+
+.aboutheading{
+    text-align: left;
+    text-transform: capitalize;
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 100px;
+    color: #132774;
+    font-family: 'Clash Display', sans-serif;
+    padding-top: 70px;
+    padding-left: 100px;
+}
+
+.about-container{
+    width: 100%;
+    margin: 50px 0 100px;
+    display: flex;
+    gap: 100px;
+}
+
+
+
+.about-img{
+    width: 250px;
+    height: 250px;
+    display: block;
+    object-fit: cover;
+    margin: 10px auto;
+    border-radius: 10px;
+    
+}
+.social-links{
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.social-img{
+    width: 30px;
+    height: 30px;
+    opacity: .4;
+    transition: .5s;
+}
+
+.social-img:hover{
+    opacity: 1;
+}
+
+.info{
+    width: 80%;
+}
+
+.info p{
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin: 30px 0;
+    color: #132774;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+::selection{
+    background: #9f526430;
+}
+
+
+.infobuttons {
+    margin-top: 20px; /* Add margin to the top of the button container */
+}
+
+.infobuttons .btn {
+    margin-right: 10px; /* Add margin to the right of each button */
+}
 
 /* contact section */
 
@@ -797,10 +847,14 @@ font-family: "Poppins", sans-serif;
         font-size: 4vw !important;  /* ADD THIS LINE - increase from 4vw to 6vw on mobile */
     }
 
-    .sub-heading-curious {
-        font-size: 4vw !important;  /* Increase from 2vw to 3vw on mobile */
-        bottom: 300px;              /* Adjust bottom spacing for mobile */
-        right: 0px;                 /* Adjust right spacing for mobile */
+   .sub-heading-curious {
+        font-size: 4vw !important;
+        bottom: 300px;
+        right: 0px;
+    }
+    
+    .text-item {
+        font-size: 4vw !important;
     }
 
     

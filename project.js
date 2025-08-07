@@ -103,3 +103,29 @@ document.querySelectorAll('.links').forEach(function(link) {
         document.querySelector('.navbar').classList.remove('open');
     });
 });
+
+
+// Rotating text functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const textItems = document.querySelectorAll('.text-item');
+    let currentIndex = 0;
+
+    function rotateText() {
+        // Remove active class from current item
+        textItems[currentIndex].classList.remove('active');
+        
+        // Move to next item (loop back to 0 if at end)
+        currentIndex = (currentIndex + 1) % textItems.length;
+        
+        // Add active class to new item
+        textItems[currentIndex].classList.add('active');
+    }
+
+    // Delay the start of rotation until after all animations
+    setTimeout(() => {
+        if (textItems.length > 0) {
+            textItems[0].classList.add('active'); // Show first item
+            setInterval(rotateText, 3000); // Start rotating every 3 seconds
+        }
+    }, 4000); // Wait 4 seconds before starting
+});
