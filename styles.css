@@ -33,7 +33,7 @@ body {
     padding-left: 40px;
     padding-right: 40px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     background: #5264BC;
     transition: transform 0.3s ease, opacity 0.3s ease;
@@ -50,15 +50,23 @@ body {
 }
 
 
-.logo-topleft img {
-    position: fixed; /* adjust as needed */
-    top: 30px;
-    left: 20px;
-    height: 18px;
+.logo-topleft {
+    position: fixed;
+    top: 36px;
+    left: 40px;
+    font-family: "Clash Display", sans-serif;
+    font-size: 16px;          /* Adjust size as needed */
+    font-weight: 500;         /* Make it bold */
+    color: #ffffff;           /* White text color */
+    text-decoration: none;    /* Remove underline from link */
     z-index: 8000;
-    display: block;
-    cursor: pointer; /* Change cursor to pointer for better UX */
-    
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+}
+
+.logo-topleft:hover {
+    color: #B86FB1;           /* Change color on hover */
 }
 
 /* Navigation links */
@@ -71,7 +79,7 @@ body {
 
 .nav-link {
     display: flex;
-    align-items: center; /* Vertically aligns the links with icons */
+    align-items: right; /* Vertically aligns the links with icons */
     transition: transform 0.3s ease; /* Smooth transition for scaling */
 }
 

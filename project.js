@@ -72,12 +72,14 @@ window.addEventListener('scroll', () => {
     if (currentScroll > lastScrollTop) {
         // Scrolling down
         navbar.classList.add('hidden');
+        logo.classList.add('hidden');        // ADD THIS TO LINE 70
     } else {
         // Scrolling up
         navbar.classList.remove('hidden');
+        logo.classList.remove('hidden');     // ADD THIS TO LINE 73
     }
 
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
 
 
