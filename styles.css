@@ -4,8 +4,6 @@ html, body {
     overflow-x: hidden;
 }
 
-.header {
-    background: #5264BC;}
   
 /* Global styles */
 * {
@@ -149,14 +147,8 @@ body {
 .header {
     width: 100%;
     height: 100vh;
-    display: flex;
-    align-items: center; /* Center align items vertically */
-    justify-content: flex-start;
-    position: relative;
-    overflow: hidden;
-    gap: 50px;
-    padding-left: 100px;
-    
+    position: relative;          
+    background: #5264BC;
 }
 
 .header-heading {
@@ -165,42 +157,25 @@ body {
     left: 0px;
     width: 40%;
     padding-left: 40px;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 20px;
+    font-size: 2vw;
+    font-weight: 300;
     margin-top: 80px;
     color: #ffffff;
     text-align: left; /* Center align the heading */
     
 }
 
-.heading-stack {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Stack and align to the right */
-    z-index: 1000;
-}
-
-.sub-heading-made-by {
-    font-size: 7vw;
-    font-weight: 600;
-    color: #ffffff;
-    text-align: right;
-    margin: 0 0 8px 0; /* Space below Made by */
-    font-family: "Clash Display", sans-serif;
-    letter-spacing: -0.5px;
-}
-
 .sub-heading-charlotte {
-    font-size: 10vw;
-    font-weight: 600;
+    position: absolute;
+    bottom: 00px;         /* Add this */
+    right: 40px;
+    font-size: 20vw;
+    font-weight: 800;
     color: #ffffff;
-    text-align: right;
-    margin: 0; /* No extra margin */
+    text-align: right;     
     font-family: "Clash Display", sans-serif;
+    z-index: 1000;
+    line-height: 0.7;
 }
 
 .sub-heading-curious {
@@ -803,10 +778,24 @@ font-family: "Poppins", sans-serif;
 
 @media (max-width: 900px) {
     
-    .header-heading {
-        font-size: 16px;
+     .sub-heading-charlotte {
+        font-size: 25vw;        /* Increase from 20vw to 30vw on mobile */
+        bottom: 20px;
+        right: 20px;            /* Reduce right spacing for mobile */
+        line-height: 0.7;
     }
 
+     .header-heading {
+        font-size: 4vw !important;  /* ADD THIS LINE - increase from 4vw to 6vw on mobile */
+    }
+
+    .sub-heading-curious {
+        font-size: 4vw !important;  /* Increase from 2vw to 3vw on mobile */
+        bottom: 300px;              /* Adjust bottom spacing for mobile */
+        right: 0px;                 /* Adjust right spacing for mobile */
+    }
+
+    
     .navbar {
         height: 600px;
         padding-left: 40px;
@@ -857,15 +846,13 @@ font-family: "Poppins", sans-serif;
         margin: 8px 0;
         display: inline-block;
         z-index: 3000;
-    }
+      }
 
     .hamburger {
         display: flex;
     }
-    
-    @media (max-width: 900px) {
-    .header,
-    .header-heading,
+
+
     .aboutheading,
     .contactheading,
     .sub-headingcontact,
@@ -874,7 +861,6 @@ font-family: "Poppins", sans-serif;
         padding-left: 16px !important;
         padding-right: 16px !important;
     }
-}
 }
 
 
