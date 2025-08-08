@@ -162,13 +162,12 @@ body {
 
 .header-heading {
     position: absolute;
-    top: 120px;
     left: 0px;
     width: 40%;
     padding-left: 40px;
     font-size: 2vw;
     font-weight: 300;
-    margin-top: 80px;
+    margin-top: 164px;
     color: #ffffff;
     text-align: left;
     /* Animation properties */
@@ -179,7 +178,7 @@ body {
 
 .sub-heading-charlotte {
     position: absolute;
-    bottom: 0px;
+    bottom: 1vh;
     right: 40px;
     font-size: 25vw;
     font-weight: 800;
@@ -207,8 +206,6 @@ body {
 
 .sub-heading-curious {
     position: absolute;
-    top: 200px;
-    bottom: 400px;
     right: 0px;
     width: 50%;
     padding-right: 40px;
@@ -217,7 +214,7 @@ body {
     color: #ffffff;
     text-align: right;
     font-family: "Clash Display", sans-serif;
-    margin-top: 0;
+    margin-top: 164px;
     /* Animation properties */
     opacity: 0;
     transform: translateY(30px);
@@ -843,22 +840,33 @@ html{
     
      .sub-heading-charlotte {
         font-size: 25vw;        /* Increase from 20vw to 30vw on mobile */
-        bottom: 10px;
+        bottom: 20px;
         right: 10px;            /* Reduce right spacing for mobile */
         line-height: 0.6;
     }
 
-     .header-heading {
-        font-size: 4vw !important;  /* ADD THIS LINE - increase from 4vw to 6vw on mobile */
+      .header-heading {
+        font-size: 3vw !important;
+        top: 70px !important;        /* Reduce from 120px to 100px */
+        margin-top: 54px !important;   /* Reduce from 80px to 20px */
+        padding-left: 40px !important; /* Reduce padding for mobile */
+        width: 80% !important;         /* Make it wider on mobile */
     }
 
-   .sub-heading-curious {
+    .sub-heading-curious {
         font-size: 4vw !important;
-       
+        top: 164px !important;         /* Adjust this too so it's closer */
+        right: 10px;
+        width: 80%;
+        padding-right: 20px;
     }
-    
+
     .text-item {
-        font-size: 4vw !important;
+        font-size: 8vw !important;    /* Change from 4vw to 6vw */
+    }
+
+    .rotating-text {
+        font-size: 8vw !important;    /* Add this line to match */
     }
 
     
