@@ -30,8 +30,8 @@ body {
     z-index: 3000;
     width: 100%;
     height: 80px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 80px;
+    padding-right: 80px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -53,7 +53,7 @@ body {
 .logo-topleft {
     position: fixed;
     top: 36px;
-    left: 40px;
+    padding-left: 80px;
     font-family: "Clash Display", sans-serif;
     font-size: 16px;          /* Adjust size as needed */
     font-weight: 500;         /* Make it bold */
@@ -97,24 +97,44 @@ body {
     font-family: "Clash Display", sans-serif;
     font-weight: 300;
     color: #ffffff;
-    margin: 0 5px;
-    padding: 8px 20px; /* Adjust padding for better spacing */
+    margin: 0 16px;
+    padding-left: 0; /* Adjust padding for better spacing */
     text-transform: capitalize;
     font-size: 16px;
     border-radius: 24px; /* Rounded corners */
     background: transparent; /* Transparent background */
     transition: all 0.3s ease; /* Smooth transition for color and size */
-    text-decoration: underline ;
     text-underline-offset: 4px;
 }
 
-.links.active, 
+.charlotte-links {
+    text-decoration: none;
+    font-family: "Clash Display", sans-serif;
+    font-weight: 300;
+    color: #ffffff;
+    margin: 0 5px;
+    padding: 0; /* No padding to avoid shifting */
+    text-transform: capitalize;
+    font-size: 16px;
+    border-radius: 24px;
+    background: transparent;
+    transition: all 0.3s ease;
+    text-underline-offset: 4px;
+}
+
+.charlotte-links:hover {
+    opacity: 1;
+    color: #2b2b2b; /* Change color on hover */
+    text-decoration: underline;
+}
+
+ 
 .links:hover {
     opacity: 1;
-    color: #B86FB1; /* Change color on hover */
-    background: #ffffff;
+    color: #2b2b2b; /* Change color on hover */
    /* font-size: 20px; */ 
     font-weight: 300;
+    text-decoration: underline;
 
 }
 
@@ -162,14 +182,13 @@ body {
 
 .header-heading {
     position: absolute;
-    left: 0px;
-    width: 40%;
-    padding-left: 40px;
-    font-size: 2vw;
+    right: 100px;
+    width: 30%;
+    top: 454px;
+    font-size: 1.4vw;
     font-weight: 300;
-    margin-top: 164px;
     color: #ffffff;
-    text-align: left;
+    text-align: right;
     /* Animation properties */
     opacity: 0;
     transform: translateY(30px);
@@ -178,19 +197,17 @@ body {
 
 .sub-heading-charlotte {
     position: absolute;
-    bottom: 1vh;
-    right: 40px;
-    font-size: 25vw;
-    font-weight: 800;
+    left: 100px;
+    width: 30%;
+    top: 454px;
+    font-size: 1.4vw;
+    font-weight: 300;
     color: #ffffff;
-    text-align: right;     
-    font-family: "Clash Display", sans-serif;
-    z-index: 1000;
-    line-height: 0.7;
+    text-align: left;
     /* Animation properties */
     opacity: 0;
-    transform: translateY(50px);
-    animation: fadeInUp 1.2s ease-out 0.5s forwards;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 2s forwards;  /* Starts after 2 seconds */
 }
 
 @keyframes fadeInUp {
@@ -206,15 +223,14 @@ body {
 
 .sub-heading-curious {
     position: absolute;
-    right: 0px;
-    width: 50%;
-    padding-right: 40px;
-    font-size: 2vw;
-    font-weight: 300;
+    top: 180px;
+    left: 100px;
+    width: 100%;
+    font-size: 1.4vw;
+    font-weight: 400;
     color: #ffffff;
-    text-align: right;
+    text-align: left;
     font-family: "Clash Display", sans-serif;
-    margin-top: 164px;
     /* Animation properties */
     opacity: 0;
     transform: translateY(30px);
@@ -222,31 +238,36 @@ body {
 }
 
 .rotating-text {
-    position: relative;
-    height: 3.5em; /* Adjust based on your line height */
-    overflow: hidden;
-    margin-top: 10px;
-    font-size: 5vw;
+    position: absolute;
+    top: 14px; /* Adjust to position it below .sub-heading-curious */
+    left: 0px; /* Align it with .sub-heading-curious */
+    height: auto; /* Allow it to grow naturally */
+    overflow: visible; /* Ensure it is not clipped */
+    margin-top: 0; /* Remove any margin affecting its position */
+    font-size: 9.4vw;
+    text-align: left;
+    width: 100%; /* Adjust width to fit content */
+    padding-left: 0; /* Ensure no padding pushes it inward */
+    color: #ffffff; /* Ensure text is visible */
+    opacity: 1; /* Ensure it is visible */
+    z-index: 1000; /* Bring it to the front */
 }
 
 .text-item {
     position: absolute;
     top: 0;
-    right: 0;
-    opacity: 0;
+    left: 0; /* Align to the left */
+    opacity: 0; /* Hide by default */
     transition: opacity 0.5s ease-in-out;
-    font-weight: 600;
+    font-weight: 800;
     color: #ffffff;
-    pointer-events: none;
-    transform: translateY(0);  /* Remove the animation transform */
-    /* Remove the animation completely */
+    pointer-events: none; /* Prevent interaction with hidden items */
 }
 
 .text-item.active {
-    opacity: 1;
-    pointer-events: auto;
+    opacity: 1; /* Show only the active item */
+    pointer-events: auto; /* Allow interaction with the active item */
 }
-
 
 .brand-name {
     font-size: 20px; /* Adjust the font size to your preference */
@@ -833,45 +854,57 @@ html{
 
 @media (max-width: 900px) {
 
-     .header {
-        height: 100vh;          /* Ensure full viewport height */
-        overflow: hidden;       /* Prevent content from spilling over */
-    }
-    
-     .sub-heading-charlotte {
-        font-size: 25vw;        /* Increase from 20vw to 30vw on mobile */
-        bottom: 20px;
-        right: 10px;            /* Reduce right spacing for mobile */
-        line-height: 0.6;
+    /* Header */
+    .header {
+        overflow: visible;      /* Prevent content from spilling over */
+        padding: 20px;         /* Add padding for spacing */
+        text-align: center;    /* Center-align content for mobile */
+        position: relative;
+
     }
 
-      .header-heading {
-        font-size: 3vw !important;
-        top: 70px !important;        /* Reduce from 120px to 100px */
-        margin-top: 54px !important;   /* Reduce from 80px to 20px */
-        padding-left: 40px !important; /* Reduce padding for mobile */
-        width: 80% !important;         /* Make it wider on mobile */
+    .header-heading {
+        font-size: 3vw;        /* Adjust font size for readability */
+        margin-top: 20px;      /* Add spacing from the top */
+        padding: 0 10px;       /* Add padding for better spacing */
+        width: 30%;           /* Ensure it spans the full width */
+        text-align: right; 
+        top: 300px;   /* Center-align text */
+    }
+
+    .sub-heading-charlotte {
+        font-size: 3vw;        /* Adjust font size for mobile */
+        line-height: 1.4;      /* Adjust line height for readability */
+        margin-top: 20px;      /* Add spacing from the header-heading */
+        text-align: left; 
+        top: 300px;   /* Center-align text */
+    }
+
+    .charlotte-links {
+        display: block;        /* Stack links vertically */
+        margin: 10px auto;     /* Center-align links with spacing */
+        font-size: 3vw;        /* Adjust font size for readability */
     }
 
     .sub-heading-curious {
-        font-size: 4vw !important;
-        top: 164px !important;         /* Adjust this too so it's closer */
-        right: 10px;
-        width: 80%;
-        padding-right: 20px;
-    }
-
-    .text-item {
-        font-size: 8vw !important;    /* Change from 4vw to 6vw */
+        font-size: 2vw;        /* Adjust font size for mobile */
+        margin-top: 20px;      /* Add spacing from the sub-heading-charlotte */
+        text-align: left;    /* Center-align text */
     }
 
     .rotating-text {
-        font-size: 8vw !important;    /* Add this line to match */
+        font-size: 5vw;        /* Adjust font size for better readability */
+        margin-top: 10px;      /* Add spacing below sub-heading-curious */
+        text-align: left;    /* Center-align text */
     }
 
-    
+    .rotating-text .text-item {
+        display: block;        /* Ensure each rotating text item stacks properly */
+    }
+
+    /* Navbar */
     .navbar {
-        height: 600px;
+        height: auto;
         padding-left: 40px;
         padding-right: 10px;
         padding-top: 40px;
@@ -879,8 +912,6 @@ html{
         flex-direction: column;
         align-items: flex-start;
         position: fixed;
-        top: 0;
-        left: 0;
         width: 100%;
         background: #212020;
         z-index: 2000;
@@ -890,6 +921,7 @@ html{
         transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s;
         display: flex;
     }
+
     .navbar.open {
         transform: translateY(0);
         opacity: 1;
@@ -902,12 +934,14 @@ html{
         padding: 0;
         gap: 8px;
         align-items: flex-start;
+        top: 40px;
     }
 
     .nav-link {
         width: auto;
         justify-content: flex-start;
         display: flex;
+        
     }
 
     .links {
@@ -920,13 +954,13 @@ html{
         margin: 8px 0;
         display: inline-block;
         z-index: 3000;
-      }
+    }
 
     .hamburger {
         display: flex;
     }
 
-
+    /* About Section */
     .aboutheading,
     .contactheading,
     .sub-headingcontact,
@@ -934,6 +968,24 @@ html{
     .footer {
         padding-left: 16px !important;
         padding-right: 16px !important;
+    }
+
+    /* Sub-heading Curious */
+    .sub-heading-curious {
+        font-size: 4vw !important;
+        top: 164px !important; /* Adjust this too so it's closer */
+        right: 10px;
+        width: 80%;
+        padding-right: 20px;
+    }
+
+    /* Rotating Text */
+    .text-item {
+        font-size: 8vw !important; /* Change from 4vw to 6vw */
+    }
+
+    .rotating-text {
+        font-size: 8vw !important; /* Add this line to match */
     }
 }
 
