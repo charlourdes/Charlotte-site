@@ -898,7 +898,7 @@ html{
 
     .rotating-text {
         font-size: 5vw;        /* Adjust font size for better readability */
-        margin-top: 10px;      /* Add spacing below sub-heading-curious */
+        margin-top: 20px;      /* Add spacing below sub-heading-curious */
         text-align: left;    /* Center-align text */
     }
 
