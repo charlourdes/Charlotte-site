@@ -870,6 +870,7 @@ html{
         width: 30%;           /* Ensure it spans the full width */
         text-align: right; 
         top: 300px;   /* Center-align text */
+        right: 40px;
     }
 
     .sub-heading-charlotte {
@@ -878,6 +879,8 @@ html{
         margin-top: 20px;      /* Add spacing from the header-heading */
         text-align: left; 
         top: 300px;   /* Center-align text */
+        left: 40px;            /* Adjust left position for mobile */
+        width: 30%;            /* Ensure it spans the full width */
     }
 
     .charlotte-links {
@@ -890,6 +893,7 @@ html{
         font-size: 2vw;        /* Adjust font size for mobile */
         margin-top: 20px;      /* Add spacing from the sub-heading-charlotte */
         text-align: left;    /* Center-align text */
+        left: 40px;
     }
 
     .rotating-text {
