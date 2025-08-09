@@ -987,6 +987,45 @@ html{
 
 @media (max-width: 480px) {
 
+ .logo-topleft {
+        position: fixed;
+        top: 36px;
+        left: 0px; /* Adjusted to move it further to the left */
+        padding-left: 20px; /* Adjust padding for smaller screens */
+        font-family: "Clash Display", sans-serif;
+        font-size: 4vw; /* Adjust size as needed */
+        font-weight: 500; /* Make it bold */
+        color: #ffffff; /* White text color */
+        text-decoration: none; /* Remove underline from link */
+        z-index: 8000;
+        cursor: pointer;
+        transition: color 0.3s ease;
+ }
+
+    .logo-topleft:hover {
+        color: #FFCBFA; /* Change color on hover */
+    }
+
+     .nav-links-container {
+        padding-top: 80px !important; /* Push links further down */
+        margin-top: 0 !important;
+    }
+
+     .nav-link {
+        width: 100%;
+        text-align: left;
+        justify-content: flex-start;
+        display: flex;
+    }
+    .links {
+        text-align: left;
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: flex-start;
+    }
+
+
     .header {
         height: 100vh; /* Allow header to grow naturally */
         width: 100%; /* Full width for mobile */
