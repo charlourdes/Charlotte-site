@@ -126,15 +126,17 @@ body {
     transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.charlotte-links:hover {
-    opacity: 1;
-    color: #282828; /* Change color on hover */
-    text-decoration: underline;
+.charlotte-links,
+.charlotte-links:link,
+.charlotte-links:visited,
+.charlotte-links:active {
+    color: #ffffff !important;
+    text-decoration: none;
 }
 
-.charlotte-links:visited {
-    color: #ffffff; /* Ensure visited links remain white */
-    text-decoration: none; /* Remove underline for visited links */
+.charlotte-links:hover {
+    color: #282828 !important;
+    text-decoration: underline;
 }
 
  
