@@ -856,80 +856,80 @@ html{
 
     /* Header */
     .header {
-        overflow: visible;      /* Prevent content from spilling over */
+        height: auto;          /* Allow header to grow naturally */
+        width: 100%;           /* Full width for mobile */
+        overflow: visible;     /* Ensure content is not clipped */
         padding: 20px;         /* Add padding for spacing */
-        text-align: center;    /* Center-align content for mobile */
-        position: relative;
+        text-align: left;      /* Align content to the left */
+        position: relative;    /* Ensure proper positioning */
+        box-sizing: border-box; /* Include padding in width/height calculations */
+    }
 
+    .sub-heading-curious {
+        font-size: 5vw;        /* Adjust font size for mobile */
+        margin: 0px 0;        /* Add spacing below the navbar */
+        padding: 0 10px;       /* Add padding for better spacing */
+        width: 100%;           /* Ensure it spans the full width */
+        text-align: left;      /* Align text to the left */
+        position: relative;    /* Reset positioning */
+        top: 0px;                /* Remove any top offset */
+        z-index: 1000;         /* Ensure it appears above other elements */
+    }
+
+    .rotating-text {
+        font-size: 6vw;        /* Adjust font size for better readability */
+        margin: 10px 0;        /* Add spacing below sub-heading-curious */
+        text-align: left;      /* Align text to the left */
     }
 
     .header-heading {
-        font-size: 3vw;        /* Adjust font size for readability */
-        margin-top: 20px;      /* Add spacing from the top */
+        font-size: 4vw;        /* Adjust font size for readability */
+        margin: 20px 0;        /* Add spacing between headings */
         padding: 0 10px;       /* Add padding for better spacing */
-        width: 30%;           /* Ensure it spans the full width */
-        text-align: right; 
-        top: 300px;   /* Center-align text */
-        right: 40px;
+        width: 100%;           /* Ensure it spans the full width */
+        text-align: left;      /* Align text to the left */
+        position: relative;    /* Reset positioning */
     }
 
     .sub-heading-charlotte {
-        font-size: 3vw;        /* Adjust font size for mobile */
-        line-height: 1.4;      /* Adjust line height for readability */
-        margin-top: 20px;      /* Add spacing from the header-heading */
-        text-align: left; 
-        top: 300px;   /* Center-align text */
-        left: 40px;            /* Adjust left position for mobile */
-        width: 30%;            /* Ensure it spans the full width */
+        font-size: 4vw;        /* Adjust font size for mobile */
+        margin: 20px 0;        /* Add spacing between headings */
+        padding: 0 10px;       /* Add padding for better spacing */
+        width: 100%;           /* Ensure it spans the full width */
+        text-align: left;      /* Align text to the left */
+        position: relative;    /* Reset positioning */
     }
 
     .charlotte-links {
         display: block;        /* Stack links vertically */
-        margin: 10px auto;     /* Center-align links with spacing */
+        margin: 5px 0;         /* Reduce vertical spacing */
         font-size: 3vw;        /* Adjust font size for readability */
-    }
-
-    .sub-heading-curious {
-        font-size: 2vw;        /* Adjust font size for mobile */
-        margin-top: 20px;      /* Add spacing from the sub-heading-charlotte */
-        text-align: left;    /* Center-align text */
-        left: 40px;
-    }
-
-    .rotating-text {
-        font-size: 5vw;        /* Adjust font size for better readability */
-        margin-top: 20px;      /* Add spacing below sub-heading-curious */
-        text-align: left;    /* Center-align text */
-    }
-
-    .rotating-text .text-item {
-        display: block;        /* Ensure each rotating text item stacks properly */
+        padding: 0;            /* Remove unnecessary padding */
+        text-align: left;      /* Align links to the left */
     }
 
     /* Navbar */
     .navbar {
         height: auto;
-        padding-left: 40px;
-        padding-right: 10px;
-        padding-top: 40px;
-        padding-bottom: 60px;
+        padding: 20px;         /* Add padding for spacing */
         flex-direction: column;
         align-items: flex-start;
         position: fixed;
+        top: 0;
+        left: 0;
         width: 100%;
         background: #212020;
         z-index: 2000;
-        /* Animation styles */
-        transform: translateY(-100%);
-        opacity: 0;
+        display: none;         /* Hide the navbar by default */
+        transform: translateY(-100%); /* Move it off-screen */
+        opacity: 0;            /* Make it invisible */
         transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), opacity 0.4s;
-        display: flex;
     }
 
     .navbar.open {
-        transform: translateY(0);
-        opacity: 1;
-        display: flex;
+        display: flex;         /* Show the navbar when open */
+        transform: translateY(0); /* Move it into view */
+        opacity: 1;            /* Make it visible */
     }
 
     .nav-links-container {
@@ -938,14 +938,12 @@ html{
         padding: 0;
         gap: 8px;
         align-items: flex-start;
-        top: 40px;
     }
 
     .nav-link {
         width: auto;
         justify-content: flex-start;
         display: flex;
-        
     }
 
     .links {
@@ -957,7 +955,6 @@ html{
         text-align: center;
         margin: 8px 0;
         display: inline-block;
-        z-index: 3000;
     }
 
     .hamburger {
@@ -973,26 +970,63 @@ html{
         padding-left: 16px !important;
         padding-right: 16px !important;
     }
+}
 
-    /* Sub-heading Curious */
-    .sub-heading-curious {
-        font-size: 4vw !important;
-        top: 164px !important; /* Adjust this too so it's closer */
-        right: 10px;
-        width: 80%;
-        padding-right: 20px;
+@media (max-width: 480px) {
+
+    .header {
+        height: 100vh; /* Allow header to grow naturally */
+        width: 100%; /* Full width for mobile */
+        overflow: visible; /* Ensure content is not clipped */
+        padding: 20px; /* Add padding for spacing */
+        text-align: left; /* Align content to the left */
+        position: relative; /* Ensure proper positioning */
+        
+    }
+    .header-heading {
+        font-size: 5vw; /* Adjust font size for smaller screens */
+        position: relative; /* Position it relative to the header */
+        top: 200px; /* Adjust top position for smaller screens */
+        align-items: left; /* Align text to the left */
+        left: 0px; /* Align it with the sub-heading-curious */
+        margin: 20px 0; /* Add spacing below the navbar */
+        width: 100%; /* Ensure it spans the full width */
     }
 
-    /* Rotating Text */
-    .text-item {
-        font-size: 8vw !important; /* Change from 4vw to 6vw */
+    .sub-heading-curious {
+        font-size: 4vw; /* Adjust font size for smaller screens */
+        top: 100px;
+        left: 16px;
+        margin: 20px 0; /* Add spacing below the navbar */
+        padding: 0 10px; /* Add padding for better spacing */
+        position: absolute; /* Position it relative to the header */
+        text-align: left; /* Align text to the left */
+        
     }
 
     .rotating-text {
-        font-size: 8vw !important; /* Add this line to match */
+        font-size: 9vw; /* Adjust font size for smaller screens */
+        left: 16px; /* Align it with the sub-heading-curious */
+        text-align: left; /* Align text to the left */
     }
+
+    .sub-heading-charlotte {
+       font-size: 5vw; /* Adjust font size for smaller screens */
+        position: relative; /* Position it relative to the header */
+        top: 250px; /* Adjust top position for smaller screens */
+        align-items: left; /* Align text to the left */
+        left: 0px; /* Align it with the sub-heading-curious */
+        margin: 20px 0; /* Add spacing below the navbar */
+        width: 100%; /* Ensure it spans the full width */
+        font-weight: 200;
+    }
+
+    .charlotte-links {
+        display: block; /* Stack links vertically */
+        margin: 5px 0; /* Reduce vertical spacing */
+        font-size: 4vw; /* Adjust font size for readability */
+        padding: 0; /* Remove unnecessary padding */
+        text-align: left; /* Align links to the left */
+    }
+
 }
-
-
-
-
