@@ -107,35 +107,48 @@ body {
     text-underline-offset: 4px;
 }
 
+.charlotte-links-container {
+    display: flex;
+    flex-direction: column; /* Stack links vertically */
+    align-items: flex-start; /* Align links to the left */
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    gap: 10px; /* Add spacing between links */
+}
 .charlotte-links {
-    text-decoration: none;
-    font-family: "Clash Display", sans-serif;
-    font-weight: 300;
-    color: #ffffff;
-    margin: 0 5px;
-    padding: 0; /* No padding to avoid shifting */
-    text-transform: capitalize;
-    font-size: 16px;
-    border-radius: 24px;
-    background: transparent;
-    transition: all 0.3s ease;
-    text-underline-offset: 4px;
+   display: block; /* Ensure each link takes up its own line */
+    text-align: left; /* Align text to the left */
+    margin: 0; /* Remove any default margin */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px; /* Adjust font size for readability */
+    color: #ffffff; /* Default link color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .charlotte-links:hover {
     opacity: 1;
-    color: #2b2b2b; /* Change color on hover */
+    color: #282828; /* Change color on hover */
     text-decoration: underline;
+}
+
+.charlotte-links:visited {
+    color: #ffffff; /* Ensure visited links remain white */
+    text-decoration: none; /* Remove underline for visited links */
 }
 
  
 .links:hover {
     opacity: 1;
     color: #2b2b2b; /* Change color on hover */
-   /* font-size: 20px; */ 
     font-weight: 300;
     text-decoration: underline;
 
+}
+
+.charlotte-links:active {
+    color: #ffffff; /* Keep active links white */
+    text-decoration: none; /* Remove underline for active links */
 }
 
 .fab-fa-github:hover{
