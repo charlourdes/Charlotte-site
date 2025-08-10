@@ -249,7 +249,7 @@ body {
     /* Animation properties */
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 1s ease-out 2.5s forwards;  /* Starts after 2.5 seconds */
+    animation: fadeInUp 1s ease-out 1.2s forwards;  /* Starts after 2.5 seconds */
 }
 
 .rotating-text {
@@ -373,7 +373,7 @@ body {
     color: #474747;
    font-family: 'Clash Display', sans-serif; 
     padding-top: 70px;
-    padding-left: 100px;
+    padding-left: 0px;
     
 }
 
@@ -992,7 +992,7 @@ html{
  .logo-topleft {
         position: fixed;
         top: 36px;
-        left: 0px; /* Adjusted to move it further to the left */
+        left: 10px; /* Adjusted to move it further to the left */
         padding-left: 20px; /* Adjust padding for smaller screens */
         font-family: "Clash Display", sans-serif;
         font-size: 4vw; /* Adjust size as needed */
@@ -1039,35 +1039,44 @@ html{
     }
     .header-heading {
         font-size: 5vw; /* Adjust font size for smaller screens */
+        font-weight: 400;
         position: relative; /* Position it relative to the header */
-        top: 200px; /* Adjust top position for smaller screens */
+        top: 320px; /* Adjust top position for smaller screens */
         align-items: left; /* Align text to the left */
         left: 0px; /* Align it with the sub-heading-curious */
         margin: 20px 0; /* Add spacing below the navbar */
-        width: 100%; /* Ensure it spans the full width */
+        width: 90%; /* Ensure it spans the full width */
     }
 
     .sub-heading-curious {
         font-size: 4vw; /* Adjust font size for smaller screens */
-        top: 100px;
+        top: 140px;
         left: 16px;
         margin: 20px 0; /* Add spacing below the navbar */
-        padding: 0 10px; /* Add padding for better spacing */
+        padding: 0px; /* Add padding for better spacing */
         position: absolute; /* Position it relative to the header */
         text-align: left; /* Align text to the left */
-        
+        padding: 0 10px; /* Add padding for better spacing */
+
     }
 
     .rotating-text {
-        font-size: 9vw; /* Adjust font size for smaller screens */
-        left: 16px; /* Align it with the sub-heading-curious */
+        font-size: 14vw; /* Adjust font size for smaller screens */
         text-align: left; /* Align text to the left */
+        left: 10px; /* Align it with the sub-heading-curious */
+        padding-right: 0px;
+        white-space: normal;      /* Allow text to wrap */
+        overflow-wrap: break-word;/* Break long words if needed */
+        word-break: break-word;   /* Break words at arbitrary points if needed */
+        width: 90%;              /* Make sure the container isn't too wide */
+        max-width: 100%; 
+        position: absolute;
     }
 
     .sub-heading-charlotte {
-       font-size: 5vw; /* Adjust font size for smaller screens */
+       font-size: 4vw; /* Adjust font size for smaller screens */
         position: relative; /* Position it relative to the header */
-        top: 250px; /* Adjust top position for smaller screens */
+        top: 340px; /* Adjust top position for smaller screens */
         align-items: left; /* Align text to the left */
         left: 0px; /* Align it with the sub-heading-curious */
         margin: 20px 0; /* Add spacing below the navbar */
@@ -1081,6 +1090,7 @@ html{
         font-size: 4vw; /* Adjust font size for readability */
         padding: 0; /* Remove unnecessary padding */
         text-align: left; /* Align links to the left */
+        left: 10px; /* Align it with the sub-heading-curious */
     }
 
 }
