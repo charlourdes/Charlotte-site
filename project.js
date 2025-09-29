@@ -129,3 +129,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }, 4000); // Wait 4 seconds before starting
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cursor = document.querySelector('.cursor');
+    
+    // Follow mouse
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+    
+    // Add hover class on interactive elements
+    const interactiveElements = document.querySelectorAll('a, button, .card, .links, [role="button"]');
+    
+    interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            cursor.classList.add('hover');
+        });
+        
+        element.addEventListener('mouseleave', () => {
+            cursor.classList.remove('hover');
+        });
+    });
+});

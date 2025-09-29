@@ -35,7 +35,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    background: #5264BC;
+    background: #ffffff;
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateY(0); /* Initially show navbar */
     opacity: 1;
@@ -53,11 +53,11 @@ body {
 .logo-topleft {
     position: fixed;
     top: 36px;
-    padding-left: 80px;
+    padding-left: 100px;
     font-family: "Clash Display", sans-serif;
     font-size: 16px;          /* Adjust size as needed */
     font-weight: 500;         /* Make it bold */
-    color: #ffffff;           /* White text color */
+    color: #000000;           /* White text color */
     text-decoration: none;    /* Remove underline from link */
     z-index: 8000;
     cursor: pointer;
@@ -66,7 +66,7 @@ body {
 }
 
 .logo-topleft:hover {
-    color: #FFCBFA           /* Change color on hover */
+    color: #002aff           /* Change color on hover */
 }
 
 /* Navigation links */
@@ -89,14 +89,14 @@ body {
     font-size: 16px; /* Adjust the font size to make the icons bigger */
     vertical-align: middle; /* Align the icons vertically with the other menu links */
     margin-top: -4px; /* Adjust as needed to fine-tune the alignment */
-    color: #741332; /* Set the color */
+    color: #0037ff; /* Set the color */
 }
 
 .links {
     text-decoration: none;
     font-family: "Clash Display", sans-serif;
     font-weight: 300;
-    color: #ffffff;
+    color: #000000;
     margin: 0 16px;
     padding-left: 0; /* Adjust padding for better spacing */
     text-transform: capitalize;
@@ -122,7 +122,7 @@ body {
     margin: 0; /* Remove any default margin */
     text-decoration: none; /* Remove underline */
     font-size: 16px; /* Adjust font size for readability */
-    color: #ffffff; /* Default link color */
+    color: #000000; /* Default link color */
     transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
@@ -130,7 +130,7 @@ body {
 .charlotte-links:link,
 .charlotte-links:visited,
 .charlotte-links:active {
-    color: #ffffff !important;
+    color: #000000 !important;
     text-decoration: none;
 }
 
@@ -192,18 +192,39 @@ body {
     width: 100%;
     height: 100vh;
     position: relative;
-    background: #5264BC;
+    background: #ffffff;
+}
+
+.cursor {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    mix-blend-mode: normal; /* Remove difference blend mode */
+}
+
+.cursor::before {
+    content: "✹";
+    display: block;
+    font-size: 28px;
+    color: #0037ff; /* Your brand blue color */
+    transition: all 0.3s ease;
+}
+
+/* Add this class for hover state */
+.cursor.hover::before {
+    transform: scale(2);
 }
 
 .header-heading {
     position: absolute;
-    right: 100px;
+    left: 100px;
     width: 30%;
-    top: 454px;
+    top: 400px;
     font-size: 1.4vw;
     font-weight: 300;
-    color: #ffffff;
-    text-align: right;
+    color: #000000;
+    text-align: left;
     /* Animation properties */
     opacity: 0;
     transform: translateY(30px);
@@ -214,10 +235,10 @@ body {
     position: absolute;
     left: 100px;
     width: 30%;
-    top: 454px;
-    font-size: 1.4vw;
+    top: 600px;
+    font-size: 1vw;
     font-weight: 300;
-    color: #ffffff;
+    color: #000000;
     text-align: left;
     /* Animation properties */
     opacity: 0;
@@ -243,8 +264,23 @@ body {
     width: 100%;
     font-size: 1.4vw;
     font-weight: 400;
-    color: #ffffff;
+    color: #000000;
     text-align: left;
+    font-family: "Clash Display", sans-serif;
+    /* Animation properties */
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out 1.2s forwards;  /* Starts after 2.5 seconds */
+}
+
+.charlotte-contact{
+    position: absolute;
+    top: 400px;
+    right: 100px;
+    font-size: 1.4vw;
+    font-weight: 400;
+    color: #000000;
+    text-align: right;
     font-family: "Clash Display", sans-serif;
     /* Animation properties */
     opacity: 0;
@@ -263,7 +299,7 @@ body {
     text-align: left;
     width: 100%; /* Adjust width to fit content */
     padding-left: 0; /* Ensure no padding pushes it inward */
-    color: #ffffff; /* Ensure text is visible */
+    color: #000000; /* Ensure text is visible */
     opacity: 1; /* Ensure it is visible */
     z-index: 1000; /* Bring it to the front */
 }
@@ -275,7 +311,7 @@ body {
     opacity: 0; /* Hide by default */
     transition: opacity 0.5s ease-in-out;
     font-weight: 800;
-    color: #ffffff;
+    color: #000000;
     pointer-events: none; /* Prevent interaction with hidden items */
 }
 
@@ -287,7 +323,7 @@ body {
 .brand-name {
     font-size: 20px; /* Adjust the font size to your preference */
     font-weight: 300;
-    color: #ffffff;
+    color: #000000;
     margin-top: 50px;
     text-align: left; 
 
@@ -308,7 +344,7 @@ body {
 }
 
 .brand-name span {
-    color: #ffffff;
+    color: #000000;
 }
 
 
@@ -1050,8 +1086,8 @@ html{
  .logo-topleft {
         position: fixed;
         top: 36px;
-        left: 10px; /* Adjusted to move it further to the left */
-        padding-left: 20px; /* Adjust padding for smaller screens */
+        left: 16px; /* Adjusted to move it further to the left */
+        padding-left: 0px; /* Adjust padding for smaller screens */
         font-family: "Clash Display", sans-serif;
         font-size: 4vw; /* Adjust size as needed */
         font-weight: 500; /* Make it bold */
@@ -1102,7 +1138,7 @@ html{
         position: relative; /* Position it relative to the header */
         top: 250px; /* Adjust top position for smaller screens */
         align-items: left; /* Align text to the left */
-        left: 0px; /* Align it with the sub-heading-curious */
+        left: 16px; /* Align it with the sub-heading-curious */
         margin: 20px 0; /* Add spacing below the navbar */
         width: 90%; /* Ensure it spans the full width */
     }
