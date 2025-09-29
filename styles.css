@@ -216,7 +216,7 @@ body {
     transform: scale(2);
 }
 
-.header-heading {
+.header-heading { /* IM CURIOUS */
     position: absolute;
     left: 100px;
     width: 30%;
@@ -231,7 +231,7 @@ body {
     animation: fadeInUp 1s ease-out 2s forwards;  /* Starts after 2 seconds */
 }
 
-.sub-heading-charlotte {
+.sub-heading-charlotte { /* BASED IN */
     position: absolute;
     left: 100px;
     width: 30%;
@@ -257,9 +257,9 @@ body {
     }
 }
 
-.sub-heading-curious {
+.sub-heading-curious { /* IM CHARL */
     position: absolute;
-    top: 180px;
+    top: 160px;
     left: 100px;
     width: 100%;
     font-size: 1.4vw;
