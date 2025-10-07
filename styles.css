@@ -20,6 +20,13 @@ body {
     font-family: 'Clash Display', sans-serif; 
     
     
+
+}
+
+body {
+  background-color: #f8f8fa;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.07) 1px, transparent 1px);
+  background-size: 120px; /* distance between lines */
 }
 
 /* Navbar */
@@ -193,6 +200,12 @@ body {
     height: 100vh;
     position: relative;
     background: #ffffff;
+}
+
+.header {
+  background-color: #ffffff;
+  background-image: linear-gradient(to right, rgba(0,0,0,0.07) 1px, transparent 1px);
+  background-size: 340px; /* distance between lines */
 }
 
 .cursor {
