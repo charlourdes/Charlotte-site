@@ -18,15 +18,10 @@ body {
     width: 100%;
     position: relative;
     font-family: 'Clash Display', sans-serif; 
-    
-    
-
 }
 
 body {
   background-color: #f8f8fa;
-  background-image: linear-gradient(to right, rgba(0,0,0,0.07) 1px, transparent 1px);
-  background-size: 120px; /* distance between lines */
 }
 
 /* Navbar */
@@ -37,8 +32,8 @@ body {
     z-index: 3000;
     width: 100%;
     height: 80px;
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: 40px;
+    padding-right: 40px;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -204,8 +199,7 @@ body {
 
 .header {
   background-color: #ffffff;
-  background-image: linear-gradient(to right, rgba(0,0,0,0.07) 1px, transparent 1px);
-  background-size: 340px; /* distance between lines */
+
 }
 
 .cursor {
@@ -229,11 +223,11 @@ body {
     transform: scale(2);
 }
 
-.header-heading { /* IM CURIOUS */
+.hero-bio { 
     position: absolute;
-    left: 100px;
+    left: 5%;
     width: 30%;
-    top: 400px;
+    top: 20%;
     font-size: 1.4vw;
     font-weight: 300;
     color: #000000;
@@ -248,7 +242,7 @@ body {
     position: absolute;
     left: 100px;
     width: 30%;
-    top: 600px;
+    top: 60%;
     font-size: 1vw;
     font-weight: 300;
     color: #000000;
@@ -270,20 +264,20 @@ body {
     }
 }
 
-.sub-heading-curious { /* IM CHARL */
-    position: absolute;
-    top: 160px;
-    left: 100px;
-    width: 100%;
+.heading-rotating { /* IM CHARL */
+  
+    bottom: 100px;        /* Distance from bottom */
+         /* Distance from right edge */
+    width: auto;          /* Let it size naturally */
     font-size: 1.4vw;
     font-weight: 400;
     color: #000000;
-    text-align: left;
+    text-align: right;    /* Right align the text */
     font-family: "Clash Display", sans-serif;
     /* Animation properties */
     opacity: 0;
     transform: translateY(30px);
-    animation: fadeInUp 1s ease-out 1.2s forwards;  /* Starts after 2.5 seconds */
+    animation: fadeInUp 1s ease-out 1.2s forwards;
 }
 
 .charlotte-contact{
