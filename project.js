@@ -153,3 +153,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+
+
+
+
+
+
+function updateUKTime() {
+    const now = new Date();
+    
+    // Convert to UK time (handles GMT/BST automatically)
+    const ukTime = now.toLocaleString('en-GB', {
+        timeZone: 'Europe/London',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: false // Use 24-hour format
+    });
+    
+    // Get day name
+    const dayName = now.toLocaleDateString('en-GB', {
+        timeZone: 'Europe/London',
+        weekday: 'long'
+    });
+    
+    // Update the element using innerHTML to render HTML
+    const timeElement = document.getElementById('uk-time');
+    if (timeElement) {
+        timeElement.innerHTML = `London, United Kingdom<br>${dayName} ${ukTime}`;
+    }
+}
+
+// Update immediately when page loads
+document.addEventListener('DOMContentLoaded', updateUKTime);
+
+// Update every second
+setInterval(updateUKTime, 1000);
