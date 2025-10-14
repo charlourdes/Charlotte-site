@@ -177,13 +177,30 @@ body {
     font-weight: 400;
 }
 
-.hero-experience {
-    font-size: 1rem;
-    font-weight: 300;
-    text-align: center;
-    flex: 1;
-    min-width: 200px;
+.hero-bio-name{
+    color: #7A7A7A;
+    font-size: 0.9rem;
 }
+
+.hero-experience {
+  font-size: 1rem;
+  font-weight: 300;
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Keep it centered in the flex row */
+}
+
+.hero-experience-text {
+  text-align: left; /* Align text inside only */
+}
+
+.hero-experience-emphasis {
+    font-weight: 500; 
+}
+
+
 
 .hero-time {
     font-size: 1rem;
@@ -203,17 +220,36 @@ body {
 
 
 .hero-subline {
-    font-size: 1rem;
-    font-weight: 300;
-    margin-top: 0.5rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 4rem; /* Matches hero-bio’s left padding */
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0; /* Remove margin-top if you're positioning it */
 }
+
+.hero-subline-emphasis {
+  font-weight: 500; /* or 450, 600 depending on the typeface */
+  font-size: 1.5rem;
+}
+
+.hero-connector {
+  position: absolute;
+  bottom: 1.4rem; /* a bit above the rotating text */
+  left: 24rem;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: left;
+  color: #000000; /* Optional: slightly muted for contrast */
+}
+
 
 .hero-rotating-text {
   position: absolute;
-  bottom: 2rem;
+  bottom: 1rem;
   right: 4rem;
-  max-width: 60%;
-  font-size: 8rem;
+  max-width: 70%;
+  font-size: 9rem;
   font-weight: 700;
   line-height: 0.8;
   color: black;
