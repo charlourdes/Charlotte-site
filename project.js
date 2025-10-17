@@ -131,28 +131,31 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateUKTime() {
     const now = new Date();
     
-    // Convert to UK time (handles GMT/BST automatically)
+    // Convert to UK time
     const ukTime = now.toLocaleString('en-GB', {
         timeZone: 'Europe/London',
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false // Use 24-hour format
+        hour12: false
     });
     
-    // Get day name
-    const dayName = now.toLocaleDateString('en-GB', {
+    // Get full UK date (day, month, year)
+    const ukDate = now.toLocaleDateString('en-GB', {
         timeZone: 'Europe/London',
-        weekday: 'long'
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
     });
     
-    // Update the element using innerHTML to render HTML
+    // Update the element
     const timeElement = document.getElementById('uk-time');
     if (timeElement) {
-        timeElement.innerHTML = `London, United Kingdom<br>${dayName} ${ukTime}`;
+        timeElement.innerHTML = `London, United Kingdom<br>${ukDate} ${ukTime}`;
     }
 }
 
-// Update immediately when page loads
+// Update immediately on page load
 document.addEventListener('DOMContentLoaded', updateUKTime);
 
 // Update every second

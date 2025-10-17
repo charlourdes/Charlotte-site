@@ -138,18 +138,18 @@ body {
     width: 100%;
     min-height: 100vh;
     background-color: #ffffff;
-    padding-top: 80px; /* Space for fixed nav */
+
 }
 
 /* NEW GRID LAYOUT */
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;  /* 3 columns */
+  grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 
-    80px      /* Navbar */
-    0.7fr     /* Bio / Experience / Time */
-    auto      /* Subline row (row 3) */
-    1fr;      /* Bottom row (hero image + rotating text) */
+    80px   /* Navbar */
+    1fr   /* Row 2: Bio/Experience/Time */
+    1fr   /* Row 3: Subline */
+    1fr;   /* Row 4: Hero image + Rotating text */
   height: 100vh;
   gap: 1rem;
   padding: 0 4rem;
@@ -171,11 +171,15 @@ body {
 }
 
 /* Row 2 - Bio / Experience / Time */
+/* Row 2 */
 .hero-bio {
-    grid-column: 1;
-    font-size: 1.1rem;
-    font-weight: 400;
-    color: #000;
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: start; /* top-align text */
+  font-size: 1.25rem;
+  width: 70%;
 }
 
 .hero-bio-name {
@@ -186,12 +190,12 @@ body {
 }
 
 .hero-experience {
-    grid-column: 2;
-    font-size: 1rem;
-    font-weight: 300;
-    display: flex;
-    justify-content: center; /* keeps the block centered in its grid column */
-    align-items: center;     /* vertically center inside row */
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: start; /* top-align text */
+  
 }
 
 
@@ -200,25 +204,29 @@ body {
 }
 
 .hero-experience-text {
-  text-align: left;        /* aligns the lines of text inside */
+  text-align: left; 
+  align-self: center;       /* aligns the lines of text inside */
  
 }
 
 .hero-time {
-  grid-column: 3;   /* right-most column in row 2 */
+  grid-column: 3;
   grid-row: 2;
-  align-self: start; /* top-align in the grid cell */
-  justify-self: end; /* stick to right side */
+  align-self: start;    /* top-align in grid */
+  justify-self: end;    /* right-align */
   text-align: right;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: #7A7A7A;
 }
 
+
+
 /* Row 3 - Only hero image in the third column */
+/* Row 4 spanning two columns: 1/3 and 2/3 */
 .hero-image {
-  grid-column: 1;   /* left column */
+  grid-column: 1 / 2;   /* left 1/3 */
   grid-row: 4;
-  align-self: end;   /* sit at bottom of row 4 */
+  align-self: end;       /* bottom of row */
 }
 
 .hero-image img {
@@ -227,14 +235,16 @@ body {
     object-fit: contain;
     user-select: none;
     display: block;
+    padding-bottom: 1REM;
+    
 }
 
 /* Row 4 - Subline + Rotating text */
 .hero-subline {
-  grid-column: 3;  /* right-most column */
+  grid-column: 3;
   grid-row: 3;
+  align-self: start;
   text-align: right;
-  align-self: start;  /* stay at top of row 3 */
 }
 
 .hero-subline-emphasis {
@@ -244,14 +254,16 @@ body {
 
 
 .hero-rotating-text {
-  grid-column: 3;   /* right column */
+  grid-column: 2 / 4;   /* right 2/3 */
   grid-row: 4;
-  align-self: end;   /* bottom of row */
+  align-self: end;       /* bottom of row */
   text-align: right;
   font-size: clamp(2.5rem, 8vw, 9rem);
   font-weight: 700;
   line-height: 0.9;
 }
+
+
 
 /* optional: prevent text shift during rotation */
 .text-item {
