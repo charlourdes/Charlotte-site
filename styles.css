@@ -197,7 +197,7 @@ body {
   justify-content: center;
   align-items: flex-end;
   text-align: center;
-  font-size: clamp(2rem, 10vw, 8.9rem);
+  font-size: clamp(1.5rem, 8.9vw, 8.9rem);
   font-weight: 700;
   line-height: 0.9;
   padding-bottom: 2rem;
@@ -252,14 +252,15 @@ body {
 
 /* Responsive Layout */
 @media (max-width: 900px) {
+  
   .hero-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto 1fr auto;
-    gap: 1.5rem;
-    padding: 2rem;
+    grid-template-columns: 1fr; /* single column */
+    grid-template-rows: auto;   /* height auto to fit content */
+    gap: 1.5rem;                /* slightly bigger gap */
+    padding: 0 2rem;            /* reduce side padding */
   }
 
-  .navbar,
+  /* Make each element span the full width */
   .hero-bio,
   .hero-experience,
   .hero-time,
@@ -267,20 +268,18 @@ body {
   .hero-subline,
   .hero-rotating-text {
     grid-column: 1;
-    text-align: center;
+    text-align: center;       /* center text for mobile */
     justify-self: center;
+    align-self: center;
   }
 
   .hero-image img {
-    width: 180px;
+    width: 150px; /* smaller image for mobile */
+    height: auto;
   }
 
   .hero-rotating-text {
-    font-size: clamp(2rem, 10vw, 4rem);
+    font-size: clamp(1.5rem, 10vw, 4rem); /* scales for small screens */
   }
-
-  .footer {
-    text-align: center;
-    padding-left: 0;
-  }
+}
 }
