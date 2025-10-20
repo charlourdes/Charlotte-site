@@ -2,6 +2,7 @@
 
 html, body {
     overflow-x: hidden;
+    height: 100%;
 }
 
 /* Global styles */
@@ -26,40 +27,36 @@ body {
     left: 0;
     z-index: 3000;
     width: 100%;
-    height: 80px;
-    padding: 0;
+    height: 60px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background: #ffffff;
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateY(0);
     opacity: 1;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
+/* Inner container now holds the border */
 .navbar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding-left: 4rem;
-    padding-right: 4rem;
+    height: 100%;
+    border-bottom: 1px solid #414040; /* thin black line */
+    box-sizing: border-box;
 }
 
-.navbar.hidden, .logo-topleft.hidden {
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
-}
 
 .logo-topleft {
     font-family: "Clash Display", sans-serif;
     font-size: 16px;
     font-weight: 500;
-    color: #000000;
+    color: #000;
     text-decoration: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
     display: flex;
     align-items: center;
 }
@@ -67,126 +64,72 @@ body {
 .logo-topleft img.logo-img {
     height: 30px;
     width: auto;
-    display: block;
 }
 
 .logo-topleft:hover {
     color: #002aff;
 }
 
-.nav-link {
-    display: flex;
-    align-items: right;
-    transition: transform 0.3s ease;
-}
-
 .nav-links-container {
     display: flex;
     list-style: none;
-    margin: 0;
-    padding-left: 0;
     gap: 16px;
 }
 
 .links {
     text-decoration: none;
-    font-family: "Clash Display", sans-serif;
     font-weight: 300;
-    color: #000000;
+    color: #000;
     font-size: 16px;
-    border-radius: 24px;
-    background: transparent;
     transition: all 0.3s ease;
     text-underline-offset: 4px;
 }
 
 .links:hover {
-    opacity: 1;
-    color: #2b2b2b;
-    font-weight: 300;
     text-decoration: underline;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 36px;
-    height: 36px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    z-index: 3001;
-    position: fixed;
-    top: 20px;
-    right: 20px;
-}
-
-.hamburger span {
-    display: block;
-    width: 28px;
-    height: 4px;
-    margin: 5px 0;
-    background: #fff;
-    border-radius: 2px;
-    transition: 0.3s;
 }
 
 /* Header + Hero */
 .header {
     width: 100%;
     min-height: 100vh;
-    background-color: #ffffff;
-
+    background-color: #fff;
 }
 
-/* NEW GRID LAYOUT */
+/* New Grid Layout */
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 
-    80px   /* Navbar */
-    1fr   /* Row 2: Bio/Experience/Time */
-    1fr   /* Row 3: Subline */
-    1fr;   /* Row 4: Hero image + Rotating text */
+    80px        /* Row 1: Navbar */
+    1fr         /* Row 2: Bio / Experience / Time */
+    1.5fr       /* Row 3: Hero image + Subline */
+    0.8fr;      /* Row 4: Rotating text */
   height: 100vh;
-  gap: 1rem;
   padding: 0 4rem;
+  gap: 1rem;
 }
 
-/* Wrap bottom content in a relative container */
-.hero-bottom-row {
-  grid-column: 1 / 4;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end; /* aligns content to the bottom of this row */
-}
-
-
-
-/* Row 1 - Navbar spans entire width */
+/* Row 1 - Navbar spans full width */
 .navbar {
-    grid-column: 1 / 4;
+  grid-column: 1 / -1;
 }
 
 /* Row 2 - Bio / Experience / Time */
-/* Row 2 */
 .hero-bio {
   grid-column: 1;
   grid-row: 2;
-  display: flex;
-  flex-direction: column;
-  justify-content: start; /* top-align text */
-  font-size: 1.25rem;
-  width: 70%;
+  font-size: 1.1rem;
+  color: #000;
+  align-self: start;
+  width: 60%;
 }
 
 .hero-bio-name {
-    color: #7A7A7A;
-    font-size: 0.9rem;
-    display: block;
-    margin-bottom: 0.5rem;
+  color: #7A7A7A;
+  font-size: 0.9rem;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .hero-experience {
@@ -194,148 +137,150 @@ body {
   grid-row: 2;
   display: flex;
   flex-direction: column;
-  justify-content: start; /* top-align text */
-  
-}
-
-
-.hero-experience-emphasis {
-    font-weight: 500; 
+  justify-content: start;
+  align-items: center;
+  text-align: center;
 }
 
 .hero-experience-text {
-  text-align: left; 
-  align-self: center;       /* aligns the lines of text inside */
- 
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.hero-experience-emphasis {
+  font-weight: 500;
 }
 
 .hero-time {
   grid-column: 3;
   grid-row: 2;
-  align-self: start;    /* top-align in grid */
-  justify-self: end;    /* right-align */
   text-align: right;
-  font-size: 0.8rem;
+  align-self: start;
+  font-size: 0.9rem;
   color: #7A7A7A;
 }
 
-
-
-/* Row 3 - Only hero image in the third column */
-/* Row 4 spanning two columns: 1/3 and 2/3 */
+/* Row 3 - Hero image (center) and Subline (right) */
 .hero-image {
-  grid-column: 1 / 2;   /* left 1/3 */
-  grid-row: 4;
-  align-self: end;       /* bottom of row */
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-20%);
 }
 
 .hero-image img {
-    height: 200px;
-    width: auto;
-    object-fit: contain;
-    user-select: none;
-    display: block;
-    padding-bottom: 1REM;
-    
+  width: 180px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
 }
 
-/* Row 4 - Subline + Rotating text */
 .hero-subline {
   grid-column: 3;
   grid-row: 3;
-  align-self: start;
+  align-self: center;
   text-align: right;
 }
 
 .hero-subline-emphasis {
     font-weight: 500;
-    font-size: 1.5rem;
+   
 }
 
-
+/* Row 4 - Rotating Text (Full width) */
 .hero-rotating-text {
-  grid-column: 2 / 4;   /* right 2/3 */
+  grid-column: 1 / -1;
   grid-row: 4;
-  align-self: end;       /* bottom of row */
-  text-align: right;
-  font-size: clamp(2.5rem, 8vw, 9rem);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+  font-size: clamp(2rem, 10vw, 8.9rem);
   font-weight: 700;
   line-height: 0.9;
+  padding-bottom: 2rem;
+
 }
 
-
-
-/* optional: prevent text shift during rotation */
 .text-item {
   display: none;
-  width: 100%;
 }
-
 .text-item.active {
   display: block;
 }
 
+
+/* Line under rotating text */
+.hero-bottom-line {
+  grid-column: 1 / 4;
+  grid-row: 4; /* same row as rotating text */
+  align-self: end;
+  padding-left: 4rem;
+  padding-right: 4rem;
+  height: 0.05rem; /* thin line */
+  background-color: #000;
+  transform: translateY(-2rem);
+}
+
+
 /* Custom Cursor */
 .cursor {
-    position: fixed;
-    pointer-events: none;
-    z-index: 9999;
-    transform: translate(-50%, -50%);
-    mix-blend-mode: normal;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
 }
-
 .cursor::before {
-    content: "✹";
-    display: block;
-    font-size: 28px;
-    color: #0037ff;
-    transition: all 0.3s ease;
+  content: "✹";
+  font-size: 28px;
+  color: #0037ff;
+  transition: all 0.3s ease;
 }
-
 .cursor.hover::before {
-    transform: scale(2);
+  transform: scale(2);
 }
 
 /* Footer */
 .footer {
-    bottom: 0;
-    left: 0;
-    z-index: 10;
-    padding-left: 100px;
-    padding-bottom: 2rem;
+  bottom: 0;
+  left: 0;
+  padding-left: 100px;
+  padding-bottom: 2rem;
 }
 
-/* RESPONSIVE LAYOUT */
+/* Responsive Layout */
 @media (max-width: 900px) {
-    .hero-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 1.5rem;
-    }
+  .hero-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
 
-    .navbar,
-    .hero-bio,
-    .hero-experience,
-    .hero-time,
-    .hero-image,
-    .hero-subline,
-    .hero-rotating-text {
-        grid-column: 1;
-        text-align: center;
-        justify-self: center;
-    }
+  .navbar,
+  .hero-bio,
+  .hero-experience,
+  .hero-time,
+  .hero-image,
+  .hero-subline,
+  .hero-rotating-text {
+    grid-column: 1;
+    text-align: center;
+    justify-self: center;
+  }
 
-    .hero-image img {
-        height: 150px;
-    }
+  .hero-image img {
+    width: 180px;
+  }
 
-    .hero-rotating-text {
-        font-size: clamp(2rem, 10vw, 4rem);
-        text-align: center;
-    }
+  .hero-rotating-text {
+    font-size: clamp(2rem, 10vw, 4rem);
+  }
 
-    .footer {
-        text-align: center;
-        padding-left: 0;
-    }
+  .footer {
+    text-align: center;
+    padding-left: 0;
+  }
 }
