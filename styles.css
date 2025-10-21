@@ -450,3 +450,28 @@ body {
   }
 }
 
+
+
+@media (max-width: 480px) {
+
+
+.hero-image {
+    grid-column: 1;
+    grid-row: 5;
+    justify-content: left;
+    align-items: left;
+    margin-bottom: 0;
+    transform: none;
+    padding-top: 2rem;
+  }
+
+  .hero-image img {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
+
+
+}
