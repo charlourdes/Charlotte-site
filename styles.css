@@ -25,7 +25,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 3000;
+    z-index: 6000;
     width: 100%;
     height: 60px;
     display: flex;
@@ -89,6 +89,107 @@ body {
     text-decoration: underline;
 }
 
+/* Burger icon styles */
+.burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 41000;
+}
+
+.burger-menu .material-icons {
+  color: #000;
+  transition: color 0.3s;
+}
+.burger-menu.active .material-icons {
+  color: #3058f6;
+}
+
+/* Overlay styles */
+.nav-overlay {
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: black;
+  z-index: 5000;
+  padding-top: 5rem;
+  margin: 0;
+  box-sizing: border-box;
+  display: flex; 
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-100%);
+  transition: opacity 0.4s cubic-bezier(.77,0,.18,1), transform 0.5s cubic-bezier(.77,0,.18,1);
+}
+
+
+.nav-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-overlay-links {
+  list-style: none;
+  padding-left: 2rem;
+  margin: 0;
+}
+
+.nav-overlay-links li {
+  margin: 2rem 0;
+}
+
+.nav-overlay-links a {
+  font-size: 4rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s;
+  
+}
+
+/* Default: show black logo, hide white logo */
+.logo-white { display: none; }
+.logo-black { display: inline; }
+
+/* When overlay is active, show white logo, hide black logo */
+.navbar.overlay-active .logo-white { display: inline; }
+.navbar.overlay-active .logo-black { display: none; }
+
+.navbar.overlay-active {
+  background: #000 !important;
+}
+
+.navbar.overlay-active .logo-topleft img {
+  filter: brightness(0) invert(1) !important;
+}
+
+.nav-overlay-links a:hover {
+  color: #3058f6;
+}
+
+/* Hide nav links and show burger on mobile */
+@media (max-width: 900px) {
+  .nav-links-container {
+    display: none;
+  }
+  .burger-menu {
+    display: flex;
+  }
+}
+
+
+
+
 /* Header + Hero */
 .header {
     width: 100%;
@@ -101,10 +202,10 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 
-    80px        /* Row 1: Navbar */
-    1fr         /* Row 2: Bio / Experience / Time */
-    1.5fr       /* Row 3: Hero image + Subline */
-    0.8fr;      /* Row 4: Rotating text */
+    60px
+    1fr
+    1.5fr
+    0.8fr;
   height: 100vh;
   padding: 0 4rem;
   gap: 1rem;
@@ -119,10 +220,10 @@ body {
 .hero-bio {
   grid-column: 1;
   grid-row: 2;
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #000;
   align-self: start;
-  width: 60%;
+  width: 80%;
 }
 
 .hero-bio-name {
@@ -255,44 +356,57 @@ body {
   .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto auto auto;
-    gap: 2.5rem;
-    
+    grid-template-rows:
+      auto    /* 1: hero-time */
+      auto    /* 2: hero-bio */
+      auto    /* 3: hero-experience */
+      auto    /* 4: hero-subline */
+      auto    /* 5: hero-image */
+      auto    /* 6: hero-rotating-text */
+      auto;   /* 7: hero-bottom-line */
+    gap: 2rem;
+    padding: 0 2rem;
+  }
+
+   .navbar {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
 
   .hero-bio {
     grid-column: 1;
-    grid-row: 2;
-    width: 100%;
+    grid-row: 3;
+    width: 80%;
     text-align: left;
     font-size: 1rem;
   }
 
   .hero-experience {
     grid-column: 1;
-    grid-row: 3;
+    grid-row: 4;
     width: 100%;
     text-align: left;
     align-items: flex-start;
+    font-size: 0.8rem;
   }
 
   .hero-time {
     grid-column: 1;
-    grid-row: 1;
+    grid-row: 2;
     width: 100%;
     text-align: right;
-    margin-bottom: 0;
-    padding-top: 4rem;
-    font-size: 0.8rem;
+    padding-top: 3rem;
+    font-size: 0.7rem;
   }
 
   .hero-image {
     grid-column: 1;
-    grid-row: 4;
+    grid-row: 5;
     justify-content: left;
     align-items: left;
     margin-bottom: 0;
     transform: none;
+    padding-top: 2rem;
   }
 
   .hero-image img {
@@ -304,9 +418,9 @@ body {
 
   .hero-subline {
     grid-column: 1;
-    grid-row: 4;
+    grid-row: 5;
     text-align: right;
-    margin-top: 1rem;
+    padding-top: 3rem;
    
   }
 
@@ -316,15 +430,12 @@ body {
     justify-content: center;
     align-items: flex-end;
     text-align: center;
-    font-size: clamp(1.5rem, 8vw, 4rem);
-    padding-bottom: 1rem;
+    font-size: clamp(1.5rem, 9vw, 10rem);
   }
 
   .hero-bottom-line {
     grid-column: 1;
     grid-row: 7;
-    padding-left: 0;
-    padding-right: 0;
     transform: translateY(-3rem);
   }
 }

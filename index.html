@@ -12,22 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 </head>
 <body>
 
 
- <body>
+
     <div class="cursor"></div>
 
-    <!-- HAMBURGER MENU -->
-    <button class="hamburger" id="hamburger-btn" aria-label="Open navigation">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
 
-<header class="header" id="home-section">
+
+<div class="header" id="home-section">
   <div class="hero-grid">
 
     <!-- Row 1: Navbar -->
@@ -35,6 +31,7 @@
       <div class="navbar-content">
         <a href="#home-section" class="logo-topleft">
           <img src="Assets/assets/Images/CRlogo.png" alt="Charlotte Robins-Rigg logo" class="logo-img" />
+          <img src="Assets/assets/Images/CRbluelogo.png" class="logo-white-overlay" alt="Logo" style="display:none;" />
         </a>
         <ul class="nav-links-container">
           <li class="nav-link"><a href="#home-section" class="links">Projects</a></li>
@@ -42,8 +39,20 @@
           <li class="nav-link"><a href="#contact-section" class="links">Contact</a></li>
           <li class="nav-link"><a href="#other-section" class="links">Other creativity</a></li>
         </ul>
+        <div class="burger-menu" id="burger-menu">
+  <span class="material-icons" style="font-size: 28px;">menu</span>
+</div>
       </div>
     </nav>
+
+    <!-- Overlay menu (hidden by default) -->
+<div class="nav-overlay" id="nav-overlay">
+  <ul class="nav-overlay-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</div>
 
     <!-- Row 2: Bio / Experience / Time -->
     <div class="hero-bio">
@@ -57,7 +66,7 @@
       </div>
     </div>
 
-    <div class="hero-time" id="uk-time"></div>
+    <div class="hero-time" id="uk-time"> </div>
 
     <!-- Row 3, Column 3: Subline text -->
     <div class="hero-subline">
@@ -88,8 +97,9 @@
     <div class="hero-bottom-line"></div>
   </div>
 
-  
+
 </header>
 
+</body>
+
 <script src="project.js"></script>
-<script src="app.js"></script>

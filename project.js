@@ -1,11 +1,9 @@
-
-
-
+// Highlight nav links based on scroll position
 document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
 
-    const checkSectionInView = () => {
+    function checkSectionInView() {
         let currentSection = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
@@ -17,61 +15,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
         navLinks.forEach(link => {
             const target = link.getAttribute('data-target');
-            if (target === currentSection) {
-                link.classList.add('in-view');
-            } else {
-                link.classList.remove('in-view');
-            }
+            link.classList.toggle('in-view', target === currentSection);
         });
-    };
+    }
 
     window.addEventListener('scroll', checkSectionInView);
+    checkSectionInView();
 });
 
-
-// JavaScript to toggle the navbar visibility based on scroll direction
-let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar');
-const logo = document.querySelector('.logo-topleft');
-
-window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScroll > lastScrollTop) {
-        // Scrolling down
-        navbar.classList.add('hidden');
-        logo.classList.add('hidden');        // ADD THIS TO LINE 70
-    } else {
-        // Scrolling up
-        navbar.classList.remove('hidden');
-        logo.classList.remove('hidden');     // ADD THIS TO LINE 73
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-});
-
-
-document.getElementById('hamburger-btn').onclick = function() {
-    document.querySelector('.navbar').classList.toggle('open');
-};
-
-document.addEventListener('click', function(event) {
+// Navbar hide/show on scroll
+document.addEventListener('DOMContentLoaded', () => {
+    let lastScrollTop = 0;
     const navbar = document.querySelector('.navbar');
-    const hamburger = document.getElementById('hamburger-btn');
-    // If menu is open and click is outside navbar and hamburger
-    if (navbar.classList.contains('open') &&
-        !navbar.contains(event.target) &&
-        !hamburger.contains(event.target)) {
-        navbar.classList.remove('open');
-    }
-});
+    const logo = document.querySelector('.logo-topleft');
 
-document.querySelectorAll('.links').forEach(function(link) {
-    link.addEventListener('click', function() {
-        document.querySelector('.navbar').classList.remove('open');
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (!navbar || !logo) return;
+
+        if (currentScroll > lastScrollTop) {
+            navbar.classList.add('hidden');
+            logo.classList.add('hidden');
+        } else {
+            navbar.classList.remove('hidden');
+            logo.classList.remove('hidden');
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
 });
-
 
 // Rotating text functionality
 document.addEventListener('DOMContentLoaded', () => {
@@ -79,67 +50,45 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentIndex = 0;
 
     function rotateText() {
-        // Remove active class from current item
         textItems[currentIndex].classList.remove('active');
-        
-        // Move to next item (loop back to 0 if at end)
         currentIndex = (currentIndex + 1) % textItems.length;
-        
-        // Add active class to new item
         textItems[currentIndex].classList.add('active');
     }
 
-    // Delay the start of rotation until after all animations
-    setTimeout(() => {
-        if (textItems.length > 0) {
-            textItems[0].classList.add('active'); // Show first item
-            setInterval(rotateText, 3000); // Start rotating every 3 seconds
-        }
-    }, 4000); // Wait 4 seconds before starting
+    if (textItems.length > 0) {
+        textItems[0].classList.add('active');
+        setTimeout(() => {
+            setInterval(rotateText, 3000);
+        }, 4000);
+    }
 });
 
-
+// Custom cursor functionality
 document.addEventListener('DOMContentLoaded', () => {
     const cursor = document.querySelector('.cursor');
-    
-    // Follow mouse
+    if (!cursor) return;
+
     document.addEventListener('mousemove', (e) => {
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
     });
-    
-    // Add hover class on interactive elements
+
     const interactiveElements = document.querySelectorAll('a, button, .card, .links, [role="button"]');
-    
     interactiveElements.forEach(element => {
-        element.addEventListener('mouseenter', () => {
-            cursor.classList.add('hover');
-        });
-        
-        element.addEventListener('mouseleave', () => {
-            cursor.classList.remove('hover');
-        });
+        element.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        element.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
     });
 });
 
-
-
-
-
-
-
+// UK time updater
 function updateUKTime() {
     const now = new Date();
-    
-    // Convert to UK time
     const ukTime = now.toLocaleString('en-GB', {
         timeZone: 'Europe/London',
         hour: '2-digit',
         minute: '2-digit',
         hour12: false
     });
-    
-    // Get full UK date (day, month, year)
     const ukDate = now.toLocaleDateString('en-GB', {
         timeZone: 'Europe/London',
         weekday: 'long',
@@ -147,29 +96,38 @@ function updateUKTime() {
         month: 'long',
         year: 'numeric'
     });
-    
-    // Update the element
     const timeElement = document.getElementById('uk-time');
     if (timeElement) {
         timeElement.innerHTML = `London, United Kingdom<br>${ukDate} ${ukTime}`;
     }
 }
-
-// Update immediately on page load
 document.addEventListener('DOMContentLoaded', updateUKTime);
-
-// Update every second
 setInterval(updateUKTime, 1000);
 
+// Burger menu functionality
+document.addEventListener('DOMContentLoaded', () => {
+const burger = document.getElementById('burger-menu');
+const overlay = document.getElementById('nav-overlay');
+const navbar = document.querySelector('.navbar');
+const logoImg = document.querySelector('.logo-topleft .logo-img');
 
+if (burger && overlay && navbar && logoImg) {
+  burger.addEventListener('click', () => {
+    overlay.classList.toggle('active');
+    navbar.classList.toggle('overlay-active');
+    if (overlay.classList.contains('active')) {
+      logoImg.src = 'Assets/assets/Images/CRlogo.png';
+    } else {
+      logoImg.src = 'Assets/assets/Images/CRbluelogo.png';
+    }
+  });
 
-// nav toggle 
-
-let links = document.querySelectorAll('.links');
-
-links.forEach(link => {
-    link.addEventListener('click', () => {
-        links.forEach(item => item.classList.remove('active'))
-        link.classList.add('active');
-    })
-})
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay || e.target.tagName === 'A') {
+      overlay.classList.remove('active');
+      navbar.classList.remove('overlay-active');
+      logoImg.src = 'Assets/assets/Images/CRlogo.png';
+    }
+  });
+}
+});
