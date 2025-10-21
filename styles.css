@@ -265,7 +265,7 @@ body {
     grid-row: 2;
     width: 100%;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
 
   .hero-experience {
@@ -283,6 +283,7 @@ body {
     text-align: right;
     margin-bottom: 0;
     padding-top: 4rem;
+    font-size: 0.8rem;
   }
 
   .hero-image {
@@ -294,11 +295,19 @@ body {
     transform: none;
   }
 
+  .hero-image img {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+}
+
   .hero-subline {
     grid-column: 1;
     grid-row: 4;
     text-align: right;
     margin-top: 1rem;
+   
   }
 
   .hero-rotating-text {
@@ -316,7 +325,7 @@ body {
     grid-row: 7;
     padding-left: 0;
     padding-right: 0;
-    margin-top: 1rem;
+    transform: translateY(-3rem);
   }
 }
 
