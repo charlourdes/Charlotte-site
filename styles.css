@@ -252,34 +252,71 @@ body {
 
 /* Responsive Layout */
 @media (max-width: 900px) {
-  
   .hero-grid {
-    grid-template-columns: 1fr; /* single column */
-    grid-template-rows: auto;   /* height auto to fit content */
-    gap: 1.5rem;                /* slightly bigger gap */
-    padding: 0 2rem;            /* reduce side padding */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    gap: 2.5rem;
+    
   }
 
-  /* Make each element span the full width */
-  .hero-bio,
-  .hero-experience,
-  .hero-time,
-  .hero-image,
-  .hero-subline,
+  .hero-bio {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    text-align: left;
+    font-size: 1.5rem;
+  }
+
+  .hero-experience {
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .hero-time {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 0;
+    padding-top: 4rem;
+  }
+
+  .hero-image {
+    grid-column: 1;
+    grid-row: 4;
+    justify-content: left;
+    align-items: left;
+    margin-bottom: 0;
+    transform: none;
+  }
+
+  .hero-subline {
+    grid-column: 1;
+    grid-row: 4;
+    text-align: right;
+    margin-top: 1rem;
+  }
+
   .hero-rotating-text {
     grid-column: 1;
-    text-align: center;       /* center text for mobile */
-    justify-self: center;
-    align-self: center;
+    grid-row: 6;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: center;
+    font-size: clamp(1.5rem, 8vw, 4rem);
+    padding-bottom: 1rem;
   }
 
-  .hero-image img {
-    width: 150px; /* smaller image for mobile */
-    height: auto;
+  .hero-bottom-line {
+    grid-column: 1;
+    grid-row: 7;
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 1rem;
   }
+}
 
-  .hero-rotating-text {
-    font-size: clamp(1.5rem, 10vw, 4rem); /* scales for small screens */
-  }
-}
-}
