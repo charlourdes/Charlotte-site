@@ -173,9 +173,19 @@ body {
   filter: brightness(0) invert(1) !important;
 }
 
+.navbar.overlay-active .burger-menu .material-icons {
+  color: #fff !important;
+}
+
 .nav-overlay-links a:hover {
   color: #3058f6;
 }
+
+.navbar.overlay-active .navbar-content {
+  border-bottom: 1px solid #fff !important;
+}
+
+
 
 /* Hide nav links and show burger on mobile */
 @media (max-width: 900px) {
