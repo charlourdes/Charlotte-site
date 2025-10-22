@@ -448,11 +448,19 @@ body {
     grid-row: 7;
     transform: translateY(-3rem);
   }
+
+  .cursor {
+    display: none !important;
+  }
 }
 
 
 
 @media (max-width: 480px) {
+
+.cursor {
+    display: none !important;
+  }
 
 
 .hero-image {
@@ -472,6 +480,13 @@ body {
   user-select: none;
 }
 
-
+.hero-subline {
+    grid-column: 1;
+    grid-row: 5;
+    text-align: right;
+    padding-top: 4rem;
+    font-size: 0.8rem;
+   
+  }
 
 }
