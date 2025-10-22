@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (textItems.length > 0) {
         textItems[0].classList.add('active');
         setTimeout(() => {
-            setInterval(rotateText, 3000);
+            setInterval(rotateText, 1500);
         }, 4000);
     }
 });
