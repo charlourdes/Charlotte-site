@@ -131,3 +131,17 @@ if (burger && overlay && navbar && logoImg) {
   });
 }
 });
+
+
+
+//  functionality for project rows on mobile
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (window.innerWidth <= 900) {
+    document.querySelectorAll('.project-row').forEach(row => {
+      row.addEventListener('click', () => {
+        row.classList.toggle('expanded');
+      });
+    });
+  }
+});
