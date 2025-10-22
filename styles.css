@@ -350,8 +350,8 @@ body {
   font-weight: 600;
   align-items: right;
   text-align: right;
-  padding-right: 4rem;
   margin-top: 8rem;
+  padding-right: 4rem;
 }
 
 .project-row {
@@ -359,7 +359,7 @@ body {
   justify-content: space-between;
   align-items: flex-start;
   border-bottom: 1px solid #ccc;
-  padding: 1rem;
+  padding: 4rem;
   overflow: hidden;
   transition: all 0.3s ease;
   height: 6rem;
@@ -502,6 +502,7 @@ body {
 
 /* Responsive Layout */
 @media (max-width: 900px) {
+
   .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -598,7 +599,7 @@ body {
 
 }
 
-
+}
 
 
 
