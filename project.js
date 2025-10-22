@@ -140,6 +140,13 @@ document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth <= 900) {
     document.querySelectorAll('.project-row').forEach(row => {
       row.addEventListener('click', () => {
+        // Close all other rows
+        document.querySelectorAll('.project-row.expanded').forEach(otherRow => {
+          if (otherRow !== row) {
+            otherRow.classList.remove('expanded');
+          }
+        });
+        // Toggle the clicked row
         row.classList.toggle('expanded');
       });
     });
