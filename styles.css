@@ -336,6 +336,125 @@ body {
 }
 
 
+/* Projects Section */
+
+.projects {
+  width: 100%;
+  padding-top: 5rem;
+}
+
+
+
+.Works-title {
+  font-size: 2rem;
+  font-weight: 600;
+  align-items: right;
+  text-align: right;
+  padding-right: 4rem;
+  margin-top: 8rem;
+}
+
+.project-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  height: 6rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.project-row .project-thumb {
+  width: 120px;
+  height: 80px;
+  background-color: #ddd;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  flex-shrink: 0;
+}
+
+.project-title {
+  font-weight: bold;
+  font-size: 3rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.project-title {
+  margin-left: 10px;
+ 
+}
+
+
+
+.project-content {
+  flex: 1;
+}
+
+.project-details {
+  display: none;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.project-details ul {
+  padding-left: 1rem;
+  margin: 0.5rem 0 0;
+}
+
+.project-row:hover {
+  height: 200px;
+  background: #fafafa;
+}
+
+.project-row:hover .project-details {
+  display: block;
+}
+
+.project-row:hover .project-thumb {
+  opacity: 1;
+}
+
+
+
+
+
+
+
+.contact-section {
+  width: 100%;
+  min-height: 300px;
+  padding: 6rem 4rem 4rem 4rem;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-title {
+  font-size: 2rem;
+  font-weight: 600;
+  align-items: right;
+  text-align: right;
+  padding-right: 4rem;
+  margin-top: 8rem;
+}
+
+
+
+
+
 /* Custom Cursor */
 .cursor {
   position: fixed;
@@ -360,6 +479,26 @@ body {
   padding-left: 100px;
   padding-bottom: 2rem;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Responsive Layout */
 @media (max-width: 900px) {
@@ -452,7 +591,22 @@ body {
   .cursor {
     display: none !important;
   }
+
+ .project-title {
+    font-size: 2rem;
+
+
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
