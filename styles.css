@@ -623,6 +623,13 @@ body {
     margin-bottom: 0.4rem;
   }
 
+  
+  
+
+  
+}
+
+@media (max-width: 900px) {
   .project-row {
     flex-direction: column;
     align-items: flex-start;
@@ -633,54 +640,43 @@ body {
     background: #fff;
     color: #000;
     padding: 0.5rem 2rem;
+    cursor: pointer;
   }
 
-  /* No hover/active/focus styles for .project-row on mobile! */
+  /* Remove hover styles for mobile */
+  .project-row:hover,
+  .project-row:active,
+  .project-row:focus {
+    background: #fff !important;
+    color: #000 !important;
+  }
+  .project-row:hover .project-details,
+  .project-row:active .project-details,
+  .project-row:focus .project-details {
+    display: none !important;
+    opacity: 0 !important;
+  }
+  .project-row:hover .project-thumb,
+  .project-row:active .project-thumb,
+  .project-row:focus .project-thumb {
+    opacity: 0 !important;
+  }
 
+  /* Only show details/thumb when expanded */
   .project-row.expanded {
     max-height: 500px;
-    /* No background or color change unless you want it */
   }
-
-  .project-row .project-thumb {
-    opacity: 0;
-    transition: opacity 0.8s cubic-bezier(.77,0,.18,1);
-  }
-
-  .project-row.expanded .project-thumb {
-    opacity: 1;
-  }
-
-  .project-row .project-thumb img {
-    width: 80px;
-    height: 60px;
-    object-fit: contain;
-    border-radius: 8px;
-    display: block;
-  }
-
-  .project-content {
-    align-items: flex-start;
-    text-align: left;
-    margin-bottom: 1.2rem;
-  }
-
-  .project-details {
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
-    opacity: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: opacity 0.4s, max-height 0.6s cubic-bezier(.77,0,.18,1);
-  }
-
   .project-row.expanded .project-details {
     opacity: 1;
     max-height: 400px;
+    transition: opacity 0.4s, max-height 0.6s cubic-bezier(.77,0,.18,1);
   }
-
-  
+  .project-row.expanded .project-thumb {
+    opacity: 1;
+  }
 }
+
+
 
 
 
@@ -701,7 +697,15 @@ body {
 }
 
 
-
+@media (hover: none) {
+  .project-row:hover .project-details {
+    display: none !important;
+  }
+  .project-row:hover {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
 
 
 

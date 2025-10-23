@@ -99,20 +99,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+ /* ---------------- PROJECT ROWS (Mobile Only) ---------------- */
+document.addEventListener('DOMContentLoaded', () => {
+  const projectRows = document.querySelectorAll('.project-row');
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-  /* ---------------- PROJECT ROWS (Mobile Only) ---------------- */
-  if (window.matchMedia("(hover: none)").matches) {
-    document.querySelectorAll(".project-row").forEach(row => {
-      row.addEventListener("click", () => {
-        // Close others first
-        document.querySelectorAll(".project-row.expanded").forEach(other => {
-          if (other !== row) other.classList.remove("expanded");
+  if (isTouchDevice) {
+    // Disable hover style on touch
+    projectRows.forEach(row => {
+      row.classList.add('no-hover'); // optional, for styling
+      row.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Close other rows
+        projectRows.forEach(other => {
+          if (other !== row) other.classList.remove('expanded');
         });
+
         // Toggle this one
-        row.classList.toggle("expanded");
+        row.classList.toggle('expanded');
       });
     });
   }
+});
+
 
 
   /* ---------------- UK TIME ---------------- */
