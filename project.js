@@ -152,3 +152,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const projectRows = document.querySelectorAll(".project-row");
+
+  // Only enable click behavior on touch devices
+  if (window.matchMedia("(hover: none)").matches) {
+    projectRows.forEach(row => {
+      row.addEventListener("click", () => {
+        row.classList.toggle("expanded");
+      });
+    });
+  }
+});

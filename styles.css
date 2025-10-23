@@ -544,7 +544,7 @@ body {
     padding: 0 2rem;
   }
 
-   .navbar {
+  .navbar {
     padding-left: 2rem;
     padding-right: 2rem;
   }
@@ -586,18 +586,17 @@ body {
   }
 
   .hero-image img {
-  width: 150px;
-  height: auto;
-  object-fit: contain;
-  user-select: none;
-}
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+  }
 
   .hero-subline {
     grid-column: 1;
     grid-row: 5;
     text-align: right;
     padding-top: 3rem;
-   
   }
 
   .hero-rotating-text {
@@ -619,78 +618,87 @@ body {
     display: none !important;
   }
 
-
-  
- .project-title {
+  .project-title {
     font-size: 2rem;
-   
-}
+    margin-bottom: 0.4rem;
+  }
 
-.project-row {
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  max-height: 80px; /* collapsed height for drop-down effect */
-  overflow: hidden;
-  transition: max-height 0.6s cubic-bezier(.77,0,.18,1), background 0.4s, color 0.4s;
-  background: #fff;
-  color: #000;
-  padding: 0.5rem 2rem;
-}
+  .project-row {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-height: 80px;
+    overflow: hidden;
+    transition: max-height 0.6s cubic-bezier(.77,0,.18,1), background 0.4s, color 0.4s;
+    background: #fff;
+    color: #000;
+    padding: 0.5rem 2rem;
+  }
 
-.project-row.expanded {
-  max-height: 500px; /* enough to show all content */
-}
+  /* No hover/active/focus styles for .project-row on mobile! */
 
-.project-row .project-thumb {
-  opacity: 0;
-  transition: opacity 0.8s cubic-bezier(.77,0,.18,1);
-}
+  .project-row.expanded {
+    max-height: 500px;
+    /* No background or color change unless you want it */
+  }
 
-.project-row.expanded .project-thumb {
-  opacity: 1;
-}
+  .project-row .project-thumb {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(.77,0,.18,1);
+  }
 
-.project-row .project-thumb img {
-  width: 80px;
-  height: 60px;
-  object-fit: contain;
-  border-radius: 8px;
-  display: block;
-}
+  .project-row.expanded .project-thumb {
+    opacity: 1;
+  }
 
-.project-title {
-  font-size: 2rem;
-  margin-bottom: 0.4rem;
-}
+  .project-row .project-thumb img {
+    width: 80px;
+    height: 60px;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+  }
 
-.project-content {
-  align-items: flex-start;
-  text-align: left;
-  margin-bottom: 1.2rem;
-}
+  .project-content {
+    align-items: flex-start;
+    text-align: left;
+    margin-bottom: 1.2rem;
+  }
 
-.project-details {
-  font-size: 0.85rem;
-  margin-top: 0.5rem;
-  opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: opacity 0.4s, max-height 0.6s cubic-bezier(.77,0,.18,1);
-}
+  .project-details {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.4s, max-height 0.6s cubic-bezier(.77,0,.18,1);
+  }
 
-.project-row.expanded .project-details {
-  opacity: 1;
-  max-height: 400px; /* enough to show all content */
-}
-
+  .project-row.expanded .project-details {
+    opacity: 1;
+    max-height: 400px;
+  }
 
   
 }
 
 
 
+@media (hover: hover) and (pointer: fine) {
+  .project-row:hover {
+    height: auto;
+    background: #ffffff;
+    color: #1e43d8;
+  }
 
+  .project-row:hover .project-details {
+    display: block;
+  }
+
+  .project-row:hover .project-thumb {
+    opacity: 1;
+  }
+}
 
 
 
