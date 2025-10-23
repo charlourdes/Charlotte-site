@@ -361,7 +361,7 @@ body {
   border-bottom: 1px solid #ccc;
   padding: 2rem;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: height 0.5s cubic-bezier(.77,0,.18,1), background 0.4s, color 0.4s;
   /* REMOVE height: 6rem; */
   cursor: pointer;
   position: relative;
@@ -378,6 +378,7 @@ body {
   height: auto;
   display: block;
   border-radius: 8px;
+  transition: opacity 0.8s cubic-bezier(.77,0,.18,1);
 }
 
 
@@ -409,8 +410,8 @@ body {
 
 .project-row:hover {
   height: auto;
-  background: #000000;
-  color: #ffffff;
+  background: #ffffff;
+  color: #1e43d8;
 }
 
 .project-row:hover .project-details {
@@ -419,7 +420,7 @@ body {
 
 .project-row .project-thumb {
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.6s ease;
 }
 
 .project-row:hover .project-thumb {
@@ -439,6 +440,15 @@ body {
   margin-bottom: 0.5rem;
 }
 
+
+
+
+
+
+
+
+
+/* Contact Section */
 
 
 
@@ -617,42 +627,65 @@ body {
 }
 
 .project-row {
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    min-height: 80px;         /* even shorter on mobile */
-    height: 80px;
-    transition: all 0.3s ease;
-  }
-  .project-row:hover,
-  .project-row:focus-within {
-    height: auto;
-    min-height: 40px;
-
-  }
-  .project-row .project-thumb img {
-    max-width: 80px;
-    max-height: 60px;
-  }
-
-  .project-content {
+  flex-direction: column;
   align-items: flex-start;
-    text-align: left;
+  text-align: left;
+  max-height: 80px; /* collapsed height for drop-down effect */
+  overflow: hidden;
+  transition: max-height 0.6s cubic-bezier(.77,0,.18,1), background 0.4s, color 0.4s;
+  background: #fff;
+  color: #000;
+  padding: 0.5rem 2rem;
 }
 
 .project-row.expanded {
-    height: auto;
-    min-height: 80px;
-    background: #000;
-    color: #fff;
-  }
-  .project-row.expanded .project-details {
-    display: block;
-  }
-  .project-row.expanded .project-thumb {
-    opacity: 1;
-  }
+  max-height: 500px; /* enough to show all content */
+}
 
+.project-row .project-thumb {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(.77,0,.18,1);
+}
+
+.project-row.expanded .project-thumb {
+  opacity: 1;
+}
+
+.project-row .project-thumb img {
+  width: 80px;
+  height: 60px;
+  object-fit: contain;
+  border-radius: 8px;
+  display: block;
+}
+
+.project-title {
+  font-size: 2rem;
+  margin-bottom: 0.4rem;
+}
+
+.project-content {
+  align-items: flex-start;
+  text-align: left;
+  margin-bottom: 1.2rem;
+}
+
+.project-details {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s, max-height 0.6s cubic-bezier(.77,0,.18,1);
+}
+
+.project-row.expanded .project-details {
+  opacity: 1;
+  max-height: 400px; /* enough to show all content */
+}
+
+
+  
 }
 
 

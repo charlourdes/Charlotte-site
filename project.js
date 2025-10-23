@@ -134,7 +134,7 @@ if (burger && overlay && navbar && logoImg) {
 
 
 
-//  functionality for project rows on mobile
+
 
 document.addEventListener('DOMContentLoaded', () => {
   if (window.innerWidth <= 900) {
