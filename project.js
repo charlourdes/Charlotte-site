@@ -101,26 +101,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
  /* ---------------- PROJECT ROWS (Mobile Only) ---------------- */
 document.addEventListener('DOMContentLoaded', () => {
-  const projectRows = document.querySelectorAll('.project-row');
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+   const projectRows = document.querySelectorAll('.project-row');
+  function isMobile() {
+    return window.innerWidth <= 900;
+  }
 
-  if (isTouchDevice) {
-    // Disable hover style on touch
-    projectRows.forEach(row => {
-      row.classList.add('no-hover'); // optional, for styling
-      row.addEventListener('click', (e) => {
+  projectRows.forEach(row => {
+    row.addEventListener('click', (e) => {
+      if (isMobile()) {
         e.preventDefault();
-
         // Close other rows
         projectRows.forEach(other => {
           if (other !== row) other.classList.remove('expanded');
         });
-
         // Toggle this one
         row.classList.toggle('expanded');
-      });
+      }
     });
-  }
+  });
 });
 
 
