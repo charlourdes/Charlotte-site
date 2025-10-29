@@ -99,28 +99,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
- /* ---------------- PROJECT ROWS (Mobile Only) ---------------- */
-document.addEventListener('DOMContentLoaded', () => {
-   const projectRows = document.querySelectorAll('.project-row');
-  function isMobile() {
-    return window.innerWidth <= 900;
-  }
+/* ---------------- PROJECT ROWS (Accordion) ---------------- */
+const projectRows = document.querySelectorAll('.project-row');
 
+if (projectRows.length > 0) {
   projectRows.forEach(row => {
-    row.addEventListener('click', (e) => {
-      if (isMobile()) {
-        e.preventDefault();
-        // Close other rows
-        projectRows.forEach(other => {
-          if (other !== row) other.classList.remove('expanded');
-        });
-        // Toggle this one
-        row.classList.toggle('expanded');
+    row.addEventListener('click', () => {
+      const isActive = row.classList.contains('expanded');
+      
+      // Collapse all others
+      projectRows.forEach(other => other.classList.remove('expanded'));
+      
+      // Expand this one if it wasn’t already active
+      if (!isActive) {
+        row.classList.add('expanded');
       }
     });
   });
-});
-
+}
 
 
   /* ---------------- UK TIME ---------------- */

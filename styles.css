@@ -336,111 +336,186 @@ body {
 }
 
 
-/* Projects Section */
 
+
+
+/* Projects Section */
 .projects {
   width: 100%;
   padding-top: 5rem;
 }
 
-
-
 .Works-title {
   font-size: 2rem;
   font-weight: 600;
-  align-items: right;
   text-align: right;
   margin-top: 8rem;
   padding-right: 4rem;
 }
 
+/* --- Project Row Base --- */
 .project-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid #ccc;
   padding: 2rem;
-  overflow: hidden;
-  transition: height 0.5s cubic-bezier(.77,0,.18,1), background 0.4s, color 0.4s;
-  /* REMOVE height: 6rem; */
   cursor: pointer;
-  position: relative;
+  background: #fff;
+  color: #000;
+  transition: background 0.5s cubic-bezier(.77,0,.18,1),
+              color 0.5s cubic-bezier(.77,0,.18,1);
+  overflow: hidden;
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
 .project-row:first-child {
   border-top: 1px solid #ccc;
 }
 
-
-.project-row .project-thumb img {
-  width: 100%;
-  max-width: 80px;   /* or whatever size you want */
-  height: auto;
-  display: block;
-  border-radius: 8px;
-  transition: opacity 0.8s cubic-bezier(.77,0,.18,1);
-}
-
-
-
-.project-title {
-  font-weight: 500;
-  font-size: 3rem;
+/* Header (title + tags + chevron all one line) */
+.project-header {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+/* Title + Tags inline together */
+.project-title-tags {
+  display: flex;
   align-items: center;
+  flex: 1;
+  min-width: 0;
+  gap: 0.75rem;
+  overflow: hidden;
+}
+
+/* Title */
+.project-title {
+  font-size: 2rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Tags (hidden until hover/active) */
+.project-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-3px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  overflow: hidden;
+  flex-shrink: 1;
+  padding-left: 4rem;
+}
+
+.tag {
+  border: 1px solid #fff;
+  color: #fff;
+  background: transparent;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  border-radius: 999px;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+/* Chevron */
+.project-arrow.material-symbols-outlined {
+  font-size: 28px;
+  color: inherit;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
 }
 
 
+.project-image{
+  width: 300px;
+  height: auto;
+  padding-top: 2rem;
+}
 
 
+/* Hover + Active States */
+.project-row:hover,
+.project-row.expanded {
+  background: #000;
+  color: #fff;
+}
 
-.project-content {
-  flex: 1;
+.project-row:hover .project-tags,
+.project-row.expanded .project-tags {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+
+.project-row.expanded .project-arrow {
+  transform: rotate(180deg);
+}
+
+
+/* Details (accordion content) */
+.project-details {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(.77,0,.18,1);
+  margin-top: 0;
+  color: #fff;
 }
 
 .project-details {
-  display: none;
-  font-size: 0.9rem;
-  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column; /* keep text stacked vertically */
+  gap: 1rem;
 }
 
-
-
-.project-row:hover {
-  height: auto;
-  background: #ffffff;
-  color: #1e43d8;
+.project-details .case-study-btn {
+  align-self: flex-end; /* push button to the right */
+  padding: 1rem 1.5rem;
 }
 
-.project-row:hover .project-details {
-  display: block;
+.case-study-btn {
+  background-color: #0A3CFF; /* bright blue */
+  color: #fff;               /* white text */
+  padding: 0.5rem 1rem;      /* comfortable padding */       /* rounded corners */
+  text-decoration: none;     /* remove underline */
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;     /* ensure proper sizing */
 }
 
-.project-row .project-thumb {
-  opacity: 0;
-  transition: opacity 0.6s ease;
+.case-study-btn:hover {
+  background-color: #ffffff; /* darker blue on hover */
+  transform: translateY(-2px); /* subtle hover lift */
+  color: #000;
 }
 
-.project-row:hover .project-thumb {
+.project-row.expanded .project-details {
   opacity: 1;
+  max-height: 500px; /* large enough to fit content */
+  margin-top: 1.5rem;
 }
 
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .project-title {
+    font-size: 1.4rem;
+  }
 
-.project-details ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0 0 1rem 0;
-  font-size: 0.8rem;
+  .tag {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+
+  .project-tags {
+    display: none; /* optional: hide tags on mobile to save space */
+  }
 }
-
-.project-details ul li {
-  padding-left: 0;
-  margin-bottom: 0.5rem;
-}
-
-
 
 
 
@@ -618,10 +693,7 @@ body {
     display: none !important;
   }
 
-  .project-title {
-    font-size: 2rem;
-    margin-bottom: 0.4rem;
-  }
+  
 
   
   
@@ -639,32 +711,7 @@ body {
 
 
 
-@media (hover: hover) and (pointer: fine) {
-  .project-row:hover {
-    height: auto;
-    background: #ffffff;
-    color: #1e43d8;
-  }
 
-  .project-row:hover .project-details {
-    display: block;
-  }
-
-  .project-row:hover .project-thumb {
-    opacity: 1;
-  }
-}
-
-
-@media (hover: none) {
-  .project-row:hover .project-details {
-    display: none !important;
-  }
-  .project-row:hover {
-    background: #fff !important;
-    color: #000 !important;
-  }
-}
 
 
 
@@ -704,3 +751,5 @@ body {
   }
 
 }
+
+
