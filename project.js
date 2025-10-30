@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('scroll', checkSectionInView);
   checkSectionInView();
 
-
   /* ---------------- NAVBAR HIDE/SHOW ---------------- */
   let lastScrollTop = 0;
   const navbar = document.querySelector('.navbar');
@@ -45,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
   });
 
-
   /* ---------------- ROTATING TEXT ---------------- */
   const textItems = document.querySelectorAll('.text-item');
   let currentIndex = 0;
@@ -60,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 4000);
   }
 
-
   /* ---------------- CUSTOM CURSOR ---------------- */
   const cursor = document.querySelector('.cursor');
   if (cursor) {
@@ -74,7 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
       el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
     });
   }
-
 
   /* ---------------- BURGER MENU ---------------- */
   const burger = document.getElementById('burger-menu');
@@ -99,25 +95,39 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-/* ---------------- PROJECT ROWS (Accordion) ---------------- */
-const projectRows = document.querySelectorAll('.project-row');
+  /* ---------------- PROJECT ROWS (Accordion) ---------------- */
+  const projectRows = document.querySelectorAll('.project-row');
 
-if (projectRows.length > 0) {
   projectRows.forEach(row => {
+    const details = row.querySelector('.project-details');
+
     row.addEventListener('click', () => {
-      const isActive = row.classList.contains('expanded');
-      
-      // Collapse all others
-      projectRows.forEach(other => other.classList.remove('expanded'));
-      
-      // Expand this one if it wasn’t already active
-      if (!isActive) {
+      const isExpanded = row.classList.contains('expanded');
+
+      // Collapse all rows first
+      projectRows.forEach(other => {
+        const otherDetails = other.querySelector('.project-details');
+        other.classList.remove('expanded');
+        otherDetails.style.height = '0px';
+      });
+
+      if (!isExpanded) {
         row.classList.add('expanded');
+        const scrollHeight = details.scrollHeight;
+        details.style.height = scrollHeight + 'px';
+
+        details.addEventListener('transitionend', function handler() {
+          if (row.classList.contains('expanded')) {
+            details.style.height = 'auto';
+          }
+          details.removeEventListener('transitionend', handler);
+        });
+      } else {
+        row.classList.remove('expanded');
+        details.style.height = '0px';
       }
     });
   });
-}
-
 
   /* ---------------- UK TIME ---------------- */
   const timeElement = document.getElementById('uk-time');

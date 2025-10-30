@@ -338,12 +338,7 @@ body {
 
 
 
-
-/* Projects Section */
-.projects {
-  width: 100%;
-  padding-top: 5rem;
-}
+/* --- PROJECT SECTION --- */
 
 .Works-title {
   font-size: 2rem;
@@ -353,42 +348,43 @@ body {
   padding-right: 4rem;
 }
 
-/* --- Project Row Base --- */
+/* --- PROJECT ROW: Clean accordion system --- */
+
 .project-row {
   border-bottom: 1px solid #ccc;
-  padding: 2rem;
+  padding: 2rem 4rem;
   cursor: pointer;
   background: #fff;
   color: #000;
-  transition: background 0.5s cubic-bezier(.77,0,.18,1),
-              color 0.5s cubic-bezier(.77,0,.18,1);
-  overflow: hidden;
-  padding-left: 4rem;
-  padding-right: 4rem;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 .project-row:first-child {
   border-top: 1px solid #ccc;
 }
 
-/* Header (title + tags + chevron all one line) */
+/* Hover and expanded state: black background */
+.project-row:hover,
+.project-row.expanded {
+  background: #000;
+  color: #fff;
+}
+
+/* --- Header: title + tags + chevron in one line --- */
 .project-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   gap: 1rem;
-  flex-wrap: nowrap;
 }
 
-/* Title + Tags inline together */
+/* Title + tags wrapper */
 .project-title-tags {
   display: flex;
   align-items: center;
+  gap: 0.75rem;
   flex: 1;
   min-width: 0;
-  gap: 0.75rem;
-  overflow: hidden;
 }
 
 /* Title */
@@ -396,126 +392,125 @@ body {
   font-size: 2rem;
   font-weight: 500;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-/* Tags (hidden until hover/active) */
+/* Tags (hidden by default, shown on hover/expand) */
 .project-tags {
   display: flex;
-  align-items: center;
   gap: 0.5rem;
   opacity: 0;
-  pointer-events: none;
-  transform: translateY(-3px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  overflow: hidden;
-  flex-shrink: 1;
-  padding-left: 4rem;
-}
-
-.tag {
-  border: 1px solid #fff;
-  color: #fff;
-  background: transparent;
-  padding: 4px 12px;
-  font-size: 0.8rem;
-  border-radius: 999px;
-  text-transform: capitalize;
-  white-space: nowrap;
-}
-
-/* Chevron */
-.project-arrow.material-symbols-outlined {
-  font-size: 28px;
-  color: inherit;
-  flex-shrink: 0;
-  transition: transform 0.4s ease;
-}
-
-
-.project-image{
-  width: 300px;
-  height: auto;
-  padding-top: 2rem;
-}
-
-
-/* Hover + Active States */
-.project-row:hover,
-.project-row.expanded {
-  background: #000;
-  color: #fff;
+  transition: opacity 0.3s ease;
 }
 
 .project-row:hover .project-tags,
 .project-row.expanded .project-tags {
   opacity: 1;
-  pointer-events: all;
-  transform: translateY(0);
+}
+
+.tag {
+  border: 1px solid currentColor;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+/* Chevron */
+.project-arrow {
+  font-size: 28px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
 }
 
 .project-row.expanded .project-arrow {
   transform: rotate(180deg);
 }
 
-
-/* Details (accordion content) */
-.project-details {
-  opacity: 0;
-  max-height: 0;
+/* --- Accordion body --- */
+.project-body {
   overflow: hidden;
-  transition: all 0.6s cubic-bezier(.77,0,.18,1);
-  margin-top: 0;
-  color: #fff;
+  max-height: 0;
+  transition: max-height 0.5s ease;
 }
 
+.project-row.expanded .project-body {
+  max-height: 1000px; /* large enough to fit your tallest project */
+  padding-top: 2rem;
+}
+
+/* --- Details (the collapsible content) --- */
 .project-details {
   display: flex;
-  flex-direction: column; /* keep text stacked vertically */
-  gap: 1rem;
+  flex-direction: row;
+  gap: 2rem;
 }
 
-.project-details .case-study-btn {
-  align-self: flex-end; /* push button to the right */
-  padding: 1rem 1.5rem;
+
+
+/* Image column */
+.project-image {
+  width: 400px;
+  flex-shrink: 0;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
+/* Text column */
+.project-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.project-description {
+  line-height: 1.6;
+}
+
+/* Button */
 .case-study-btn {
-  background-color: #0A3CFF; /* bright blue */
-  color: #ffffff;               /* white text */
-  padding: 0.5rem 1rem;      /* comfortable padding */       /* rounded corners */
-  text-decoration: none;     /* remove underline */
+  align-self: flex-start;
+  background: #0A3CFF;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
   font-weight: 500;
   transition: background 0.3s ease, transform 0.2s ease;
-  display: inline-block;     /* ensure proper sizing */
 }
 
 .case-study-btn:hover {
-  background-color: #ffffff; /* darker blue on hover */
-  transform: translateY(-2px); /* subtle hover lift */
+  background: #fff;
   color: #000;
+  transform: translateY(-2px);
 }
 
-.project-row.expanded .project-details {
-  opacity: 1;
-  max-height: 500px; /* large enough to fit content */
-  margin-top: 1.5rem;
-}
-
-/* Responsive adjustments */
+/* --- Responsive --- */
 @media (max-width: 900px) {
-  .project-title {
-    font-size: 1.4rem;
+  .project-row {
+    padding: 2rem;
   }
 
-  .tag {
-    font-size: 0.65rem;
-    padding: 3px 8px;
+  .project-title {
+    font-size: 1.5rem;
   }
 
   .project-tags {
-    display: none; /* optional: hide tags on mobile to save space */
+    display: none;
+  }
+
+  .project-details {
+    flex-direction: column;
+  }
+
+  .project-image {
+    width: 100%;
   }
 }
+
 
 
 
