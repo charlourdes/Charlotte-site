@@ -442,9 +442,9 @@ body {
 
 /* --- Details (the collapsible content) --- */
 .project-details {
-  display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  overflow: hidden;
+  height: 0;
+  transition: height 0.5s ease;
 }
 
 
@@ -452,10 +452,8 @@ body {
 /* Image column */
 .project-image {
   width: 400px;
+  max-height: 400px;
   flex-shrink: 0;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
 }
 
 /* Text column */

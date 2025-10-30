@@ -95,39 +95,60 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ---------------- PROJECT ROWS (Accordion) ---------------- */
-  const projectRows = document.querySelectorAll('.project-row');
+ /* ---------------- PROJECT ROWS (Accordion) ---------------- */
+const projectRows = document.querySelectorAll('.project-row');
 
-  projectRows.forEach(row => {
-    const details = row.querySelector('.project-details');
+projectRows.forEach((row) => {
+  const details = row.querySelector('.project-details');
 
-    row.addEventListener('click', () => {
-      const isExpanded = row.classList.contains('expanded');
+  row.addEventListener('click', () => {
+    const isExpanded = row.classList.contains('expanded');
 
-      // Collapse all rows first
-      projectRows.forEach(other => {
-        const otherDetails = other.querySelector('.project-details');
+    // Collapse all other rows
+    projectRows.forEach((other) => {
+      const otherDetails = other.querySelector('.project-details');
+      if (other !== row) {
         other.classList.remove('expanded');
         otherDetails.style.height = '0px';
+      }
+    });
+
+    if (!isExpanded) {
+      // Expand clicked row
+      row.classList.add('expanded');
+
+      // Temporarily reset to auto to get full height
+      details.style.height = 'auto';
+      const fullHeight = details.scrollHeight + 'px';
+
+      // Set back to 0 instantly to start transition
+      details.style.height = '0px';
+      requestAnimationFrame(() => {
+        details.style.height = fullHeight;
       });
 
-      if (!isExpanded) {
-        row.classList.add('expanded');
-        const scrollHeight = details.scrollHeight;
-        details.style.height = scrollHeight + 'px';
-
-        details.addEventListener('transitionend', function handler() {
+      // Once transition ends, set height to auto for flexibility
+      details.addEventListener(
+        'transitionend',
+        function handler() {
           if (row.classList.contains('expanded')) {
             details.style.height = 'auto';
           }
           details.removeEventListener('transitionend', handler);
-        });
-      } else {
-        row.classList.remove('expanded');
-        details.style.height = '0px';
-      }
-    });
+        },
+        { once: true }
+      );
+    } else {
+      // Collapse the same row if open
+      row.classList.remove('expanded');
+      details.style.height = details.scrollHeight + 'px'; // set fixed height first
+      requestAnimationFrame(() => {
+        details.style.height = '0px'; // then collapse
+      });
+    }
   });
+});
+
 
   /* ---------------- UK TIME ---------------- */
   const timeElement = document.getElementById('uk-time');
