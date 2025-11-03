@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', () => {
   /* ---------------- NAV HIGHLIGHT ---------------- */
   const navLinks = document.querySelectorAll('.nav-link');

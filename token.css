@@ -1,0 +1,203 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@100,200,300,400,500,600,700&display=swap');
+
+:root {
+    
+  /* BODY FONT SIZES */
+  --font-body-xxs: 0.875rem; /* 14px */
+  --font-body-xs: 1rem;      /* 16px */
+  --font-body-s: 1.125rem;   /* 18px */
+  --font-body-m: 1.25rem;    /* 20px */
+  --font-body-l: 1.5rem;     /* 24px */
+  --font-body-xl: 1.75rem;   /* 28px */
+
+  /* HEADING FONT SIZES */
+  --font-heading-s: 2rem;        /* 32px */
+  --font-heading-m: 2.25rem;     /* 36px */
+  --font-heading-l: 3rem;        /* 48px */
+  --font-heading-xl: 5rem;       /* 80px */
+  --font-heading-display: 8.9rem;/* 142px */
+
+
+  /* Line heights */
+
+    /* Body text */
+  --lh-body-xxs: 1.5;  /* 150% (Figma 150%) */
+  --lh-body-xs: 1.5;
+  --lh-body-s: 1.5;
+  --lh-body-m: 1.5;
+  --lh-body-l: 1.3;    /* 130% (Figma 130%) */
+  --lh-body-xl: 1.3;
+
+  /* Headings */
+  --lh-heading-s: 1.3;      /* 130% (Figma 130%) */
+  --lh-heading-m: 1.2;      /* 120% (Figma 120%) */
+  --lh-heading-l: 1.2;      /* 120% (Figma 120%) */
+  --lh-heading-xl: 1.1;     /* 110% (Figma 110%) */
+  --lh-heading-display: 1.0; /* 100% (Figma 100%) — USE ON single-line only */
+
+
+/* === FONT WEIGHTS === */
+  --fw-extralight: 200; /* Extra Light */
+  --fw-light: 300;      /* Light */
+  --fw-regular: 400;    /* Regular */
+  --fw-medium: 500;     /* Medium */
+  --fw-semibold: 600;   /* Semi Bold */
+  --fw-bold: 700;       /* Bold */
+}
+
+:root {
+  /* Brand colours */
+  --brand-black: #000000;
+  --brand-darkgrey: #313131;
+  --brand-grey: #7A7A7A;
+  --brand-blue: #0A3CFF;
+  --brand-white: #FFFFFF;
+
+  /* Link hover decoration */
+  --link-hover-decoration: underline;
+}
+
+
+
+:root {
+  /* Button icon sizes */
+  --button-xl-icon-size: 20px;
+  --button-l-icon-size: 18px;
+  --button-m-icon-size: 16px;
+  --button-s-icon-size: 14px;
+
+  /* Gap between icon and text */
+  --button-icon-gap: 4px;
+
+  /* Button text sizes */
+  --button-xl-text-size: var(--button-text-xl);
+  --button-l-text-size: var(--button-text-l);
+  --button-m-text-size: var(--button-text-m);
+  --button-s-text-size: var(--button-text-s);
+
+  /* Button heights */
+  --button-xl-height: 52px;
+  --button-l-height: 48px;
+  --button-m-height: 40px;
+  --button-s-height: 28px;
+
+  /* Button paddings */
+  --button-xl-padding-y: 16px;
+  --button-xl-padding-x: 20px;
+  --button-l-padding-y: 15px;
+  --button-l-padding-x: 16px;
+  --button-m-padding-y: 12px;
+  --button-m-padding-x: 16px;
+  --button-s-padding-y: 7px;
+  --button-s-padding-x: 8px;
+
+  /* Shared styles */
+  --button-border-radius: 4px;
+  --button-text-color: var(--text-white);
+  --button-bg-color: var(--brand-blue);
+  --fw-regular: 400;
+}
+
+/* =======================================
+   BASE BUTTON STYLES
+======================================= */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Clash Display', sans-serif;
+  font-weight: var(--fw-regular);
+  border-radius: var(--button-border-radius);
+  gap: var(--button-icon-gap);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  line-height: 1;
+  transition: none;
+}
+
+/* =======================================
+   SIZE VARIANTS
+======================================= */
+.button--xl {
+  font-size: var(--button-xl-text-size);
+  height: var(--button-xl-height);
+  padding: var(--button-xl-padding-y) var(--button-xl-padding-x);
+}
+
+.button--l {
+  font-size: var(--button-l-text-size);
+  height: var(--button-l-height);
+  padding: var(--button-l-padding-y) var(--button-l-padding-x);
+}
+
+.button--m {
+  font-size: var(--button-m-text-size);
+  height: var(--button-m-height);
+  padding: var(--button-m-padding-y) var(--button-m-padding-x);
+}
+
+.button--s {
+  font-size: var(--button-s-text-size);
+  height: var(--button-s-height);
+  padding: var(--button-s-padding-y) var(--button-s-padding-x);
+}
+
+/* =======================================
+   VARIANT: --Primary-btn
+======================================= */
+.--Primary-btn {
+  background-color: var(--brand-blue);
+  color: var(--brand-white);
+}
+
+/* Hover state for Primary uses tertiary style */
+.--Primary-btn:hover {
+  background-color: var(--brand-white);
+  color: var(--brand-black);
+  border: 1px solid var(--brand-black);
+}
+
+/* =======================================
+   VARIANT: --tertiary-hover-btn
+======================================= */
+.--tertiary-hover-btn {
+  background-color: var(--brand-white);
+  color: var(--brand-black);
+  border: 1px solid var(--brand-black);
+}
+
+/* =======================================
+   VARIANT: --dark-btn
+======================================= */
+.--dark-btn {
+  background-color: var(--brand-black);
+  color: var(--brand-white);
+}
+
+/* Hover state for Dark uses tertiary style */
+.--dark-btn:hover {
+  background-color: var(--brand-white);
+  color: var(--brand-black);
+  border: 1px solid var(--brand-black);
+}
+
+/* =======================================
+   VARIANT: --link-btn
+======================================= */
+.--link-btn {
+  background: none;
+  border: none;
+  color: var(--brand-black);
+  padding: 0;
+  font: inherit;
+}
+
+/* Hover state for Link buttons */
+.--link-btn:hover,
+.--link-btn:focus {
+  text-decoration: var(--link-hover-decoration);
+  outline: none;
+}
+
+
