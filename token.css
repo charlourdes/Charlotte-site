@@ -96,6 +96,15 @@
   transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
 
+.button .material-symbols-outlined {
+  font-size: inherit;       /* Inherit size from the button */
+  vertical-align: middle;   /* Align nicely with text */
+  line-height: 1;           /* Prevent extra spacing */
+  display: inline-flex;     /* Keep inline-flex behavior with button */
+  transition: transform 0.2s ease; /* optional: for hover animations */
+}
+
+
 
 /* =======================================
    SIZE VARIANTS
