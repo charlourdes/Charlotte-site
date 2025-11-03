@@ -87,8 +87,15 @@
   border: none;
   text-decoration: none;
   line-height: 1;
-  transition: none;
+
+  width: auto;
+  max-width: max-content;
+  box-sizing: border-box;
+
+  /* Add transitions for hover animations */
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
 }
+
 
 /* =======================================
    SIZE VARIANTS
@@ -284,4 +291,22 @@
 .--link-btn-m:hover,
 .--link-btn-s:hover {
   text-decoration: var(--link-hover-decoration);
+}
+
+/* Hover state for primary and dark buttons with animation */
+.--primary-btn:hover,
+.--primary-btn-xl:hover,
+.--primary-btn-l:hover,
+.--primary-btn-m:hover,
+.--primary-btn-s:hover,
+.--dark-btn:hover,
+.--dark-btn-xl:hover,
+.--dark-btn-l:hover,
+.--dark-btn-m:hover,
+.--dark-btn-s:hover {
+  background-color: var(--brand-white);
+  color: var(--brand-black);
+
+  /* subtle lift animation */
+  transform: translateY(-2px);
 }
