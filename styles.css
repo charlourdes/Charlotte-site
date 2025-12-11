@@ -36,8 +36,6 @@ body {
     transition: transform 0.3s ease, opacity 0.3s ease;
     transform: translateY(0);
     opacity: 1;
-    padding-left: 4rem;
-    padding-right: 4rem;
 }
 
 /* Inner container now holds the border */
@@ -49,6 +47,8 @@ body {
     height: 100%;
     border-bottom: 1px solid #414040; /* thin black line */
     box-sizing: border-box;
+    padding-left: 4rem;
+    padding-right: 4rem;
 }
 
 
@@ -211,47 +211,64 @@ body {
 /* New Grid Layout */
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 30% 70%;
   grid-template-rows: 
     60px
-    1fr
-    1.5fr
-    0.8fr;
-  height: 100vh;
-  padding: 0 4rem;
-  gap: 1rem;
+    auto
+    auto
+    auto;
+  min-height: 100vh;
+  padding: 0 0rem;
 }
 
 /* Row 1 - Navbar spans full width */
 .navbar {
   grid-column: 1 / -1;
+  grid-row: 1;
 }
 
-/* Row 2 - Bio / Experience / Time */
-.hero-bio {
+/* Row 2 Left - Time/Date + Name (30%) */
+.hero-row-2-left {
   grid-column: 1;
-  grid-row: 2;
-  font-size: 1rem;
-  color: #000;
-  align-self: start;
-  width: 80%;
-}
-
-.hero-bio-name {
-  color: #7A7A7A;
-  font-size: 0.9rem;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.hero-experience {
-  grid-column: 2;
   grid-row: 2;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  gap: 1rem;
+}
+
+.hero-images {
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  text-align: center;
+  justify-content: center;
+  height: auto; /* Changed from fixed 200px */
+  gap: 16px
+}
+
+.hero-images img {
+  width: auto;
+  height: 100px; /* Set height on images instead */
+  object-fit: contain;
+}
+
+
+.hero-time {
+  font-size: 0.9rem;
+  color: #7A7A7A;
+  font-weight: 300;
+}
+
+.hero-bio-name {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 500;
+  display: block;
+}
+
+.hero-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .hero-experience-text {
@@ -263,43 +280,63 @@ body {
   font-weight: 500;
 }
 
-.hero-time {
-  grid-column: 3;
-  grid-row: 2;
-  text-align: right;
-  align-self: start;
-  font-size: 0.9rem;
-  color: #7A7A7A;
-  font-weight: 300;
-}
+/* Row 2 Right - Hero Image (70%) */
 
-/* Row 3 - Hero image (center) and Subline (right) */
-.hero-image {
+.hero-row-2 {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: 30% 70%;
+  align-items: stretch;         /* stretch children to row height */
+  border-bottom: 1px solid #000;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.hero-row-2-right {
   grid-column: 2;
-  grid-row: 3;
+  grid-row: 2;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-20%);
+  border-left: 1px solid #000;
+
 }
 
-.hero-image img {
-  width: 180px;
+.hero-row-2-right img {
   height: auto;
+  height: 200px;
   object-fit: contain;
-  user-select: none;
+  padding-bottom: 1.5rem; /* spacing above the line */
+}
+
+/* Row 3 Left - Bio Text (70%) */
+.hero-row-3-left {
+  grid-column: 1;
+  grid-row: 3;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #000;
+  padding-left: 4rem;
+  padding-top: 2rem;
+}
+
+/* Row 3 Right - Subline (30%) */
+.hero-row-3-right {
+  grid-column: 2;
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .hero-subline {
-  grid-column: 3;
-  grid-row: 3;
-  align-self: center;
   text-align: right;
+  font-size: 1rem;
+  line-height: 1.4;
 }
 
 .hero-subline-emphasis {
-    font-weight: 500;
-   
+  font-weight: 500;
 }
 
 /* Row 4 - Rotating Text (Full width) */
@@ -308,13 +345,12 @@ body {
   grid-row: 4;
   display: flex;
   justify-content: center;
-  align-items: flex-end;
+  align-items: center;
   text-align: center;
   font-size: clamp(1.5rem, 8.9vw, 8.9rem);
   font-weight: 700;
   line-height: 1;
-  padding-bottom: 2rem;
-
+  padding: 2rem 0;
 }
 
 .text-item {
@@ -324,17 +360,13 @@ body {
   display: block;
 }
 
-
 /* Line under rotating text */
 .hero-bottom-line {
-  grid-column: 1 / 4;
-  grid-row: 4; /* same row as rotating text */
-  align-self: end;
-  padding-left: 4rem;
-  padding-right: 4rem;
-  height: 0.05rem; /* thin line */
+  grid-column: 1 / -1;
+  grid-row: 5;
+  height: 1px;
   background-color: #000;
-  transform: translateY(-2rem);
+  width: 100%;
 }
 
 
@@ -621,8 +653,8 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows:
-      auto    /* 1: hero-time */
-      auto    /* 2: hero-bio */
+      auto    /* 1: hero-time-name */
+      auto    /* 2: hero-images */
       auto    /* 3: hero-experience */
       auto    /* 4: hero-subline */
       auto    /* 5: hero-image */
